@@ -1,6 +1,7 @@
 <?php
 
 include_once "../db_connection/config.php";
+include_once "../db_connection/db.php";
 include_once "../inclusions.php";
 
 class Participation {
