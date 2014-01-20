@@ -20,6 +20,9 @@
 <body>
 	
 	<script>
+		var field_width=380;
+		var field_height=640;
+		
 		function cart2pol(p) {
 			return [p[0],Math.sqrt(p[1]*p[1]+p[2]*p[2]), Math.atan2(p[2],p[1])];
 		}
@@ -29,11 +32,11 @@
 		}		
 		
 		function subx2x(draw,sx) {
-			return (sx+1)*draw.viewbox().width/2;
+			return (sx+1)*field_width/2;
 		}
 		
 		function suby2y(draw,sy) {
-			return (sy+1)*draw.viewbox().height/2;
+			return (sy+1)*field_height/2;
 		}
 				
 		function create_player(draw, color) {
