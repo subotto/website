@@ -183,6 +183,29 @@
 			return rod;
 		}
 		
+		function create_ball(draw) {
+			var ball=new Object();
+			
+			ball.x=0;
+			ball.y=0;
+			
+			ball.move = function(x,y) {
+				if (x==null || y==null)
+					return;
+				ball.x=x;
+				ball.y=y;
+			}
+			
+			ball.path=draw.circle(20);
+			ball.path.attr({ fill: '#fff' , stroke: '#000', 'stroke-width': 2})
+			
+			ball.draw=function() {
+				ball.path.move(subx2x(ball.x), suby2y(ball.y));
+			}
+			
+			return ball;
+		}
+		
 		function create_table(draw) {
 			var table=new Object();
 			
@@ -220,9 +243,17 @@
 			
 			table.rods_red=rods_red;
 			table.rods_blue=rods_blue;
+			
+			
+			table.ball = create_ball(draw);
+			table.move_ball=function(x,y) {
+				table.ball.move(x,y);
+			}
+			
 			table.draw=function() {
 				table.rods_red.draw();
 				table.rods_blue.draw();
+				table.ball.draw();
 			}
 			
 			table.rotate=function(c,i,angle) {
@@ -327,7 +358,7 @@
 		});
 		
 		function display_frame(frame) {
-			//table.ball.move(frame.ball_x, frame.ball_y);
+			table.ball.move(frame.ball_x, frame.ball_y);
 			
 			table.rods_red[0].offset(frame.rod_red_0_shift);
 			table.rods_red[1].offset(frame.rod_red_1_shift);
@@ -348,6 +379,8 @@
 			table.rods_blue[1].rotate(frame.rod_blue_1_angle);
 			table.rods_blue[2].rotate(frame.rod_blue_2_angle);
 			table.rods_blue[3].rotate(frame.rod_blue_3_angle);
+			
+			table.draw();
 			
 		}
 		
@@ -373,7 +406,7 @@
 		setInterval(function(){
 			var actual_time=(new Date().getTime())/1000 - time_delta;
 			
-			debug("actual_time = " + actual_time);
+			//debug("actual_time = " + actual_time);
 			
 			// Rimuove i frame vecchi
 			for (var i=0;i<frames.length;++i) {
@@ -392,9 +425,17 @@
 		},1000/10);
 		
 		setInterval(function(){
-			$.getJSON("http://127.0.0.1:8000/", null,
-				addNewFrames
-				);
+			if (frames.length > 0) {
+				last_timestamp=frames[frames.length-1].timestamp;
+				$.getJSON("http://127.0.0.1:8000/", {'last_timestamp' : last_timestamp},
+					addNewFrames
+					);
+			}
+			else {
+				$.getJSON("http://127.0.0.1:8000/", null,
+					addNewFrames
+					);
+			}
 		},1000/2);
 		/*
 		setInterval(function(){
