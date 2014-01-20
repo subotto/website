@@ -250,7 +250,10 @@
 		});
 		
 		setInterval(function(){
-			angle=(Date.now()%2000-1000)/1000.0*Math.PI;
+			var d = new Date();
+			var n = d.getMilliseconds();
+			
+			var angle=(n-500)/500.0*Math.PI;
 			table.rotate(0,0,angle);
 			table.rotate(0,1,angle);
 			table.rotate(0,2,angle);
