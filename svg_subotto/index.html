@@ -31,11 +31,11 @@
 			return [p[0],p[1]*Math.cos(p[2]), p[1]*Math.sin(p[2])];
 		}		
 		
-		function subx2x(draw,sx) {
+		function subx2x(sx) {
 			return (sx+1)*field_width/2;
 		}
 		
-		function suby2y(draw,sy) {
+		function suby2y(sy) {
 			return (sy+1)*field_height/2;
 		}
 				
@@ -123,7 +123,7 @@
 			player.draw = function() {
 				var points=player.rotated_mesh.map(pol2cart);
 				points=points.map(function(p) {
-					return [p[0]*player.scale +subx2x(draw,player.x),p[1]*player.scale+suby2y(draw,player.y),p[2]*player.scale];}
+					return [p[0]*player.scale +subx2x(player.x),p[1]*player.scale+suby2y(player.y),p[2]*player.scale];}
 				);
 				var s="M ";
 				for (var i=0;i<points.length;++i) {
@@ -194,20 +194,24 @@
 					return;
 				ball.x=x;
 				ball.y=y;
+
 			}
 			
 			ball.path=draw.circle(20);
 			ball.path.attr({ fill: '#fff' , stroke: '#000', 'stroke-width': 2})
 			
 			ball.draw=function() {
-				ball.path.move(subx2x(ball.x), suby2y(ball.y));
+				ball.path.move(subx2x(ball.x)-ball.path.bbox().width/2, suby2y(ball.y)-ball.path.bbox().height/2);
 			}
+      ball.draw();
 			
 			return ball;
 		}
 		
 		function create_table(draw) {
 			var table=new Object();
+			
+			table.ball = create_ball(draw);
 			
 			rods_red=[];
 			rods_red[0]=create_rod(draw,1,0,0);
@@ -245,11 +249,6 @@
 			table.rods_blue=rods_blue;
 			
 			
-			table.ball = create_ball(draw);
-			table.move_ball=function(x,y) {
-				table.ball.move(x,y);
-			}
-			
 			table.draw=function() {
 				table.rods_red.draw();
 				table.rods_blue.draw();
@@ -271,6 +270,7 @@
 	<!--<div id="canvas" style="width:380px; height: 640px; background: green;"></div>-->
 	
 	<div id="debug_div"></div>
+  <div id="frames_div"></div>
 	
 	<div>
 		<svg id="dfse" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="640.18" width="380.17" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -337,9 +337,10 @@
 			 </svg>
 			</svg>
 	</div>
-	
+	<div id="time"></div>
 	<script>
 		var draw = SVG('canvas');
+    var fps = 10.0;
 		
 		var table=create_table(draw);
 		table.rotate(0,0,-Math.PI/2);
@@ -358,7 +359,7 @@
 		});
 		
 		function display_frame(frame) {
-			table.ball.move(frame.ball_x, frame.ball_y);
+			table.ball.move(frame.ball_y, frame.ball_x); // Sto disegnando in verticale quindi sono invertiti
 			
 			table.rods_red[0].offset(frame.rod_red_0_shift);
 			table.rods_red[1].offset(frame.rod_red_1_shift);
@@ -385,13 +386,38 @@
 		}
 		
 		function debug(s) {
-			$("#debug_div").html($("#debug_div").html()+"<br>"+s)
+			//$("#debug_div").html($("#debug_div").html()+"<br>"+s)
+      //$("#debug_div").html(s)
 		}
+
+function repr_frames() {
+    var res = "";
+    for (var i = 0; i < frames.length; i++) {
+        res = res + " " + frames[i].timestamp;
+    }
+return res;
+}
+
+    function print_frames() {
+        //$("#frames_div").html(repr_frames());
+    }
 		
 		var time_delta=-1;
 		var frames=[];
 		function addNewFrames(response) {
-			frames=frames.concat(response.data);
+        if (fps != response.fps) {
+            fps = response.fps;
+            update_everything_timer();
+        }
+        if (response.data.length > 0)
+            debug("Adding frames!");
+        else
+            debug("No new frames to add.");
+        updating_frames = false;
+			  frames=frames.concat(response.data);
+        if (frames.length > 0) {
+            last_timestamp=frames[frames.length-1].timestamp;
+        }
 			if (time_delta<0) {
 				time_delta=(new Date().getTime())/1000 - frames[0].timestamp;
 				//debug(time_delta);
@@ -403,40 +429,63 @@
 				);
 			*/	
 		
-		setInterval(function(){
-			var actual_time=(new Date().getTime())/1000 - time_delta;
+stop = false;
+
+function update_everything() {
+        if (stop) return;
+      var current_time = (new Date().getTime())/1000;
+			var actual_time=current_time - time_delta;
 			
-			//debug("actual_time = " + actual_time);
-			
+			debug("current_time=" + current_time + " actual_time = " + actual_time);
+			  debug(repr_frames());
 			// Rimuove i frame vecchi
 			for (var i=0;i<frames.length;++i) {
 				if (frames[i].timestamp >= actual_time)
 					break;
 			}
 			frames=frames.slice(i);
+        debug(repr_frames());
 			
 			//debug("removed " + i + " frames");
 			
-			if (frames.length==0) return;
+			  if (frames.length==0) {
+            time_delta += 1/fps;
+            return;
+        }
 			
-			var frame=frames[0];
-			//debug("displaying t="+frame.timestamp);
-			display_frame(frame);
-		},1000/10);
-		
+		var frame=frames[0];
+		debug("displaying t="+frame.timestamp+" length="+frames.length+" actual_time="+actual_time);
+
+	$("#time").html("Time: "+time_delta)	
+
+      display_frame(frame);
+      print_frames();
+}
+
+update_everything_handle = null;
+
+function update_everything_timer() {
+    if (update_everything_handle != null) {
+        clearInterval(update_everything_handle);
+    }
+    update_everything_handle = setInterval(update_everything, 1000/fps);
+}
+update_everything_timer();
+
+last_timestamp = null;
+updating_frames = false;
 		setInterval(function(){
-			if (frames.length > 0) {
-				last_timestamp=frames[frames.length-1].timestamp;
-				$.getJSON("http://127.0.0.1:8000/", {'last_timestamp' : last_timestamp},
-					addNewFrames
-					);
+        if (stop) return;
+        if (updating_frames) return;
+        updating_frames = true;
+			if (last_timestamp != null) {
+				  $.getJSON("/subtracker/subtracker.json", {'last_timestamp' : last_timestamp.toFixed(6)},
+					          addNewFrames);
+			} else {
+				  $.getJSON("/subtracker/subtracker.json", {'last_timestamp' : "0"},
+					          addNewFrames);
 			}
-			else {
-				$.getJSON("http://127.0.0.1:8000/", null,
-					addNewFrames
-					);
-			}
-		},1000/2);
+		}, 1000/2);
 		/*
 		setInterval(function(){
 			var d = new Date();
