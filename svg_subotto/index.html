@@ -449,9 +449,14 @@ function update_everything() {
 			
 			//debug("removed " + i + " frames");
 			
+        // Tentative synchronization code
 			  if (frames.length==0) {
             time_delta += 1/fps;
             return;
+        } else {
+            // If we're too much behind, make a time jump
+            var lateness = frames[0].timestamp - actual_time;
+            if (lateness > 0.5) time_delta -= lateness;
         }
 			
 		var frame=frames[0];
