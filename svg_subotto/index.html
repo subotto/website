@@ -341,6 +341,7 @@
 	<script>
 		var draw = SVG('canvas');
     var fps = 10.0;
+    var request_url = "/24ore/tracking.json";
 		
 		var table=create_table(draw);
 		table.rotate(0,0,-Math.PI/2);
@@ -479,10 +480,10 @@ updating_frames = false;
         if (updating_frames) return;
         updating_frames = true;
 			if (last_timestamp != null) {
-				  $.getJSON("/subtracker/subtracker.json", {'last_timestamp' : last_timestamp.toFixed(6)},
+				  $.getJSON(request_url, {'last_timestamp' : last_timestamp.toFixed(6)},
 					          addNewFrames);
 			} else {
-				  $.getJSON("/subtracker/subtracker.json", {'last_timestamp' : "0"},
+				  $.getJSON(request_url, {'last_timestamp' : "0"},
 					          addNewFrames);
 			}
 		}, 1000/2);
