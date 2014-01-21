@@ -436,17 +436,29 @@ function update_everything() {
         if (stop) return;
       var current_time = (new Date().getTime())/1000;
 			var actual_time=current_time - time_delta;
-			
-			debug("current_time=" + current_time + " actual_time = " + actual_time);
-			  debug(repr_frames());
+
+			//debug("current_time=" + current_time + " actual_time = " + actual_time);
+			//debug(repr_frames());
 			// Rimuove i frame vecchi
 			for (var i=0;i<frames.length;++i) {
 				if (frames[i].timestamp >= actual_time)
 					break;
 			}
 			frames=frames.slice(i);
-        debug(repr_frames());
-			
+
+    function max(a, b) { if (a > b) return a; else return b; }
+
+      // If the buffer is too long, trim it a bit
+    var max_length = 4.0 * fps;
+    if (frames.length > max_length) {
+        time_delta -= (frames.length - max_length) / fps;
+    }
+    var good_length = 2.0 * fps;
+    if (frames.length > good_length) {
+        time_delta -= max(0.1, 0.005 * (frames.length - good_length)) / fps;
+    }
+
+      //debug(repr_frames());
 			//debug("removed " + i + " frames");
 			
         // Tentative synchronization code
