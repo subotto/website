@@ -143,7 +143,7 @@ Come ormai avviene dal 2011, nei giorni precedenti la partita il Subotto
 viene smontato e ripulito. Stavolta però, oltre alla pulizia, avviene
 anche una meticolosa sostituzione delle molle e degli altri pezzi da
 cambiare. L'opera di manutenzione viene supervisionata dal nuovo Vicecapitano
-dei Matematici, Alessandro Iraci (in arte, Sasha).
+dei Matematici, Alessandro "Sasha" Iraci.
 Vengono inoltre acquistate delle nuove palline, che vanno a sostituire
 quelle ormai erose per le innumerevoli ore di gioco dai tempi antichi del Timpano.
 </p>
