@@ -21,14 +21,14 @@ start_box("Turni della 24 ore 2014");
 <tr><td>9.20 - 9.40</td><td>Francesco Florian, Claudio Afeltra</td><td>Niccolò Foppiani, Fabio Martini</td></tr>
 <tr><td>9.40 - 10.00</td><td>Justin Lacini, Francesco Grotto</td><td>Stanislao Zompì, Matteo Ippoliti</td></tr>
 <tr><td>10.00 - 10.30</td><td>Roberto Pagaria, Gianluca Grilletti</td><td>Andrea Ferrara, Mario Vietri</td></tr>
-<tr><td>10.30 - 11.00</td><td>Lorenzo Benedini, Marco Trevisiol</td><td>Boris Lagnasco, Michele Maiolani</td></tr>
+<tr><td>10.30 - 11.00</td><td>Lorenzo Benedini, Marco Trevisiol</td><td>Loris Bagnasco, Michele Maiolani</td></tr>
 <tr><td>11.00 - 11.30</td><td>Alice Cortinovis, Davide Lofano</td><td>Olmo Cerri, Enis Belgacem</td></tr>
 <tr><td>11.30 - 12.00</td><td>Fabio Ferri, Andrea Parma</td><td>Davide Decataldo, Francesco Cannizzaro</td></tr>
 <tr><td>12.00 - 12.20</td><td>Giada Franz, Federico Glaudo</td><td>Jinglei Zhang, Federica Surace</td></tr>
 <tr><td>12.20 - 12.40</td><td>Giulio Rovellini, Matteo Barucco</td><td>Carmelo Mordini, Luca Baroni</td></tr>
 <tr><td>12.40 - 13.00</td><td>Guido Lido, Alessandro Pigati</td><td>Michele Fava, Simone Biasco</td></tr>
 <tr><td>13.00 - 13.30</td><td>Giovanni Barbarino, Cristoforo Caffi</td><td>Stanislao Zompì, Marco Cilibrasi</td></tr>
-<tr><td>13.30 - 14.00</td><td>Valentino Liu, Luca Ghidelli</td><td>Boris Lagnasco, Federica Surace</td></tr>
+<tr><td>13.30 - 14.00</td><td>Valentino Liu, Luca Ghidelli</td><td>Loris Bagnasco, Federica Surace</td></tr>
 <tr><td>14.00 - 14.30</td><td>Julian Demeio, Matteo de Ceglie</td><td>Luciano Perulli, Enrico Dardanis</td></tr>
 <tr><td>14.30 - 15.00</td><td>Marco Barberis, Daniele Semola</td><td>Vasco Cavina, Simone Biasco</td></tr>
 <tr><td>15.00 - 15.30</td><td>Francesco Morosi, Edoardo Galfrè</td><td>Ilaria Morresi, Martina Bottachiari</td></tr>
@@ -40,7 +40,7 @@ start_box("Turni della 24 ore 2014");
 <tr><td>18.00 - 18.30</td><td>Davide Lombardo, Giovanni Mascellani</td><td>Ludovico Pontiggia, Alessandro Podo</td></tr>
 <tr><td>18.30 - 19.00</td><td>Gennady N. Uraltsev, Carlo Mantegazza</td><td>Giacomo De Palma, Glauco Schettini</td></tr>
 <tr><td>19.00 - 19.20</td><td>Laura Capuano, Alessandra Caraceni</td><td>Filippo Revello, Matteo Becchi</td></tr>
-<tr><td>19.00 - 19.30</td><td>Aleksandra Baranova, Alessandro Malusà</td><td>Jinglei Zhang, Matteo Ippoliti</td></tr>
+<tr><td>19.20 - 19.40</td><td>Aleksandra Baranova, Alessandro Malusà</td><td>Jinglei Zhang, Matteo Ippoliti</td></tr>
 <tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Federico Calzolari, ??</td></tr>
 
 </tbody>
