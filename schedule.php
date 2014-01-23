@@ -20,7 +20,7 @@ start_box("Turni della 24 ore 2014");
 <tr><td>9.00 - 9.20</td><td>Luca Minutillo Menga, Emanuele Tron</td><td>Matteo Becchi, Achille Mauri</td></tr>
 <tr><td>9.20 - 9.40</td><td>Francesco Florian, Claudio Afeltra</td><td>Niccolò Foppiani, Fabio Martini</td></tr>
 <tr><td>9.40 - 10.00</td><td>Justin Lacini, Francesco Grotto</td><td>Stanislao Zompì, Matteo Ippoliti</td></tr>
-<tr><td>10.00 - 10.30</td><td>Andrea Ferrara, Mario Vietri</td><td>Roberto Pagaria, Gianluca Grilletti</td></tr>
+<tr><td>10.00 - 10.30</td><td>Roberto Pagaria, Gianluca Grilletti</td><td>Andrea Ferrara, Mario Vietri</td></tr>
 <tr><td>10.30 - 11.00</td><td>Lorenzo Benedini, Marco Trevisiol</td><td>Boris Lagnasco, Michele Maiolani</td></tr>
 <tr><td>11.00 - 11.30</td><td>Alice Cortinovis, Davide Lofano</td><td>Olmo Cerri, Enis Belgacem</td></tr>
 <tr><td>11.30 - 12.00</td><td>Fabio Ferri, Andrea Parma</td><td>Davide Decataldo, Francesco Cannizzaro</td></tr>
