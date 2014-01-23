@@ -388,7 +388,7 @@
 		
 		function debug(s) {
 			//$("#debug_div").html($("#debug_div").html()+"<br>"+s)
-      //$("#debug_div").html(s)
+      $("#debug_div").html(s)
 		}
 
 function repr_frames() {
@@ -400,7 +400,7 @@ return res;
 }
 
     function print_frames() {
-        //$("#frames_div").html(repr_frames());
+        $("#frames_div").html(repr_frames());
     }
 		
 		var time_delta=-1;
@@ -410,10 +410,10 @@ return res;
             fps = response.fps;
             update_everything_timer();
         }
-        if (response.data.length > 0)
+        /*if (response.data.length > 0)
             debug("Adding frames!");
         else
-            debug("No new frames to add.");
+            debug("No new frames to add.");*/
         updating_frames = false;
 			  frames=frames.concat(response.data);
         if (frames.length > 0) {
@@ -428,7 +428,7 @@ return res;
 		/*$.getJSON("http://127.0.0.1:8000/", null,
 				addNewFrames
 				);
-			*/	
+			*/
 		
 stop = false;
 
@@ -436,6 +436,8 @@ function update_everything() {
         if (stop) return;
       var current_time = (new Date().getTime())/1000;
 			var actual_time=current_time - time_delta;
+
+      //print_frames();
 
 			//debug("current_time=" + current_time + " actual_time = " + actual_time);
 			//debug(repr_frames());
@@ -449,11 +451,11 @@ function update_everything() {
     function max(a, b) { if (a > b) return a; else return b; }
 
       // If the buffer is too long, trim it a bit
-    var max_length = 4.0 * fps;
-    if (frames.length > max_length) {
-        time_delta -= (frames.length - max_length) / fps;
-    }
-    var good_length = 2.0 * fps;
+    var max_length = 5.0 * fps;
+    //if (frames.length > max_length) {
+    //    time_delta -= (frames.length - max_length) / fps;
+    //}
+    var good_length = 3.0 * fps;
     if (frames.length > good_length) {
         time_delta -= max(0.1, 0.005 * (frames.length - good_length)) / fps;
     }
@@ -472,12 +474,12 @@ function update_everything() {
         }
 			
 		var frame=frames[0];
-		debug("displaying t="+frame.timestamp+" length="+frames.length+" actual_time="+actual_time);
+		//debug("displaying t="+frame.timestamp+" length="+frames.length+" actual_time="+actual_time);
 
 	$("#time").html("Time: "+time_delta)	
 
       display_frame(frame);
-      print_frames();
+      //print_frames();
 }
 
 update_everything_handle = null;
