@@ -7,6 +7,8 @@ make_header(true, "current");
 
 start_box("Turni della 24 ore 2014");
 
+paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazioni."));
+
 ?>
 
 <table id="tabella">
@@ -31,17 +33,22 @@ start_box("Turni della 24 ore 2014");
 <tr><td>13.30 - 14.00</td><td>Valentino Liu, Luca Ghidelli</td><td>Loris Bagnasco, Federica Surace</td></tr>
 <tr><td>14.00 - 14.30</td><td>Julian Demeio, Matteo de Ceglie</td><td>Luciano Perulli, Enrico Dardanis</td></tr>
 <tr><td>14.30 - 15.00</td><td>Marco Barberis, Daniele Semola</td><td>Vasco Cavina, Simone Biasco</td></tr>
-<tr><td>15.00 - 15.30</td><td>Francesco Morosi, Edoardo Galfrè</td><td>Ilaria Morresi, Martina Bottachiari</td></tr>
+
+<tr><td>15.00 - 15.30</td><td>Davide Lombardo, Giovanni Mascellani</td><td>Ludovico Pontiggia, Alessandro Podo</td></tr>
+
 <tr><td>15.30 - 16.00</td><td>Manuel Berbenni, Andrea Bianchi</td><td>Olmo Cerri, Caterina Pavoni</td></tr>
 <tr><td>16.00 - 16.30</td><td>Giovanni Paolini, Fabrizio Bianchi</td><td>Giulio Mandorli, Tommaso Pajero</td></tr>
 <tr><td>16.30 - 17.00</td><td>Alessandro Iraci, Ugo Bindini</td><td>Vasco Cavina, Luca Rigovacca</td></tr>
 <tr><td>17.00 - 17.30</td><td>Matteo Verzobio, Federico Scavia</td><td>Matteo Rovere, Giuliano Chiriacò</td></tr>
 <tr><td>17.30 - 18.00</td><td>Giulio Bresciani, Marco Marengon</td><td>Davide Napoli, Stefano Bolzonella</td></tr>
-<tr><td>18.00 - 18.30</td><td>Davide Lombardo, Giovanni Mascellani</td><td>Ludovico Pontiggia, Alessandro Podo</td></tr>
+
+
+<tr><td>18.00 - 18.30</td><td>Francesco Morosi, Edoardo Galfrè</td><td>Anna Zago, Martina Bottacchiari</td></tr>
+
 <tr><td>18.30 - 19.00</td><td>Gennady N. Uraltsev, Carlo Mantegazza</td><td>Giacomo De Palma, Glauco Schettini</td></tr>
 <tr><td>19.00 - 19.20</td><td>Laura Capuano, Alessandra Caraceni</td><td>Filippo Revello, Matteo Becchi</td></tr>
 <tr><td>19.20 - 19.40</td><td>Aleksandra Baranova, Alessandro Malusà</td><td>Jinglei Zhang, Matteo Ippoliti</td></tr>
-<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Federico Calzolari, ??</td></tr>
+<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>??</td></tr>
 
 </tbody>
 </table>
