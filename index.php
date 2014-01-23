@@ -28,7 +28,7 @@ start_box("Edizioni della 24 ore");
 		<td class="center">-</td>
 		<td class="center">-</td>
 		<td>Capitano: Giulio Mandorli<br />
-			Vicecapitano: -<br />
+			Vicecapitano: Marco Cilibrasi<br />
 			Partecipanti ufficiali: -</td>
 		<td class="center">Collegio Carducci</td>
 	</tr>
