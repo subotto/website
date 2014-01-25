@@ -29,9 +29,9 @@ function start_html($titolo, $streaming = FALSE, $live_score = FALSE) {
 			
 			if ( $live_score ) {
 				?>
-				<script src="js/jquery.js"></script>
-				<script src="js/svg.js"></script>
-				<script src="js/field.js"></script>
+				<script src="svg_subotto/js/jquery.js"></script>
+				<script src="svg_subotto/js/svg.js"></script>
+				<script src="svg_subotto/js/field.js"></script>
 				<?php
 			}
 			?>

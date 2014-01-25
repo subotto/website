@@ -237,6 +237,7 @@ function create_table(draw) {
 		table.rods_red=rods_red;
 		table.rods_blue=rods_blue;
 
+
 		table.draw=function() {
 				table.rods_red.draw();
 				table.rods_blue.draw();

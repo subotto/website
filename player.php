@@ -94,8 +94,8 @@ else {
 		
 		function change_choice(x) {
 			if ( !(x in loaded) ) {
-				loadXMLDoc( "part".concat( x ), "player_details.php?id=".concat( pid ).concat( "&match_id=" ).concat( x ) );
-				/*loadXMLDoc( "graph_time".concat( x ), "graph_time.php?player_id=".concat( pid ).concat( "&match_id=" ).concat( x ) );*/
+				load( "part".concat( x ), "player_details.php?id=".concat( pid ).concat( "&match_id=" ).concat( x ) );
+				/*load( "graph_time".concat( x ), "graph_time.php?player_id=".concat( pid ).concat( "&match_id=" ).concat( x ) );*/
 			}
 			
 			var s = "spart";

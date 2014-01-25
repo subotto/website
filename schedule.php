@@ -35,7 +35,7 @@ function boris_lagnasco() {
 
 <tr><td>8.00 - 8.30</td><td>Luigi Pagano, Leonardo Tolomeo</td><td>Matteo Rovere, Francesco Cannizzaro</td></tr>
 <tr><td>8.30 - 9.00</td><td>Filippo Callegaro, Federico Poloni</td><td>Andrea Stacchiotti, Enis Belgacem</td></tr>
-<tr><td>9.00 - 9.20</td><td>Luca Minutillo Menga, Emanuele Tron</td><td>Achille Mauri, ??</td></tr>
+<tr><td>9.00 - 9.20</td><td>Luca Minutillo Menga, Emanuele Tron</td><td>Achille Mauri, Fedor Getman</td></tr>
 <tr><td>9.20 - 9.40</td><td>Francesco Florian, Claudio Afeltra</td><td>Niccolò Foppiani, Fabio Martini</td></tr>
 <tr><td>9.40 - 10.00</td><td>Justin Lacini, Francesco Grotto</td><td>Stanislao Zompì, Matteo Ippoliti</td></tr>
 <tr><td>10.00 - 10.30</td><td>Roberto Pagaria, Gianluca Grilletti</td><td>Andrea Ferrara, Mario Vietri</td></tr>
@@ -59,7 +59,7 @@ function boris_lagnasco() {
 <tr><td>18.30 - 19.00</td><td>Gennady N. Uraltsev, Carlo Mantegazza</td><td>Giacomo De Palma, Glauco Schettini</td></tr>
 <tr><td>19.00 - 19.20</td><td>Laura Capuano, Alessandra Caraceni</td><td>Filippo Revello, Matteo Becchi</td></tr>
 <tr><td>19.20 - 19.40</td><td>Aleksandra Baranova, Alessandro Malusà</td><td>Jinglei Zhang, Matteo Ippoliti</td></tr>
-<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Fedor Getman, ??</td></tr>
+<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Davide Napoli, Paolo Abiuso</td></tr>
 
 </tbody>
 </table>
