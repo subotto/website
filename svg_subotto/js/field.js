@@ -375,7 +375,7 @@ function update_everything_timer() {
 }
 
 function init_field() {
-		draw = SVG('canvas');
+		draw = SVG('canvas').size(380.17, 640.18);
 		table = create_table(draw);
 		table.rotate(0,0,-Math.PI/2);
 		table.rotate(0,1,-Math.PI/2);
