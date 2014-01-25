@@ -75,17 +75,17 @@ init_field();
 var n=0;
 
 function dataRefresh() {
-	loadXMLDoc("main", "main.php");
-	loadXMLDoc("left", "left.php");
+	load("main", "main.php");
+	load("left", "left.php");
 	
 	if (n%3 == 0) {
-		loadXMLDoc("player00", "stats/player00.html");
-		loadXMLDoc("player01", "stats/player01.html");
-		loadXMLDoc("player10", "stats/player10.html");
-		loadXMLDoc("player11", "stats/player11.html");
+		load("player00", "stats/player00.html");
+		load("player01", "stats/player01.html");
+		load("player10", "stats/player10.html");
+		load("player11", "stats/player11.html");
 	}
 	
-	if (n%20 == 0) loadXMLDoc("right", "right.php");
+	if (n%20 == 0) load("right", "right.php");
 	n = n+1;
 	
 	setTimeout("dataRefresh()",1000);

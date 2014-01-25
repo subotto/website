@@ -9,7 +9,7 @@ function hide(id) {
 }
 
 
-function loadXMLDoc(id, page) {
+function load(id, page) {
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
