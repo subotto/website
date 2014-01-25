@@ -2,7 +2,7 @@
 
 
 
-function start_html($titolo,$streaming = FALSE) {
+function start_html($titolo, $streaming = FALSE, $live_score = FALSE) {
 	?>
 	    <!doctype html>
 		<html>
@@ -24,6 +24,14 @@ function start_html($titolo,$streaming = FALSE) {
 				?>
 				<link href="video-js/video-js.css" rel="stylesheet">
 				<script src="video-js/video.js"></script>
+				<?php
+			}
+			
+			if ( $live_score ) {
+				?>
+				<script src="js/jquery.js"></script>
+				<script src="js/svg.js"></script>
+				<script src="js/field.js"></script>
 				<?php
 			}
 			?>

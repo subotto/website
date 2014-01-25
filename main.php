@@ -6,7 +6,6 @@ $test = TRUE;
 
 // Carico lo status
 $status = trim(file_get_contents("stats/fake.html"));
-//var_dump($status);
 
 if ( $status == "before" ) {
 	// Countdown
