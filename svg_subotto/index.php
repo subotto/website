@@ -20,17 +20,19 @@
 
 
 <body>
-	<input type="range" id="angle_slider" min="-314" max="314"><span id="angle_value"></span>
-	<!--<div id="canvas" style="width:380px; height: 640px; background: green;"></div>-->
+  <!--<input type="range" id="angle_slider" min="-314" max="314"><span id="angle_value"></span>-->
+  <!--<div id="canvas" style="width:380px; height: 640px; background: green;"></div>-->
 
-	<div id="debug_div"></div>
+  <div id="debug_div"></div>
   <div id="frames_div"></div>
 
-	<div><?php include "field.svg"; ?></div>
-	<div id="time"></div>
-	<script>
-   init_field();
-	</script>
+  <div><?php include "field.svg"; ?></div>
+
+  <div id="time"></div>
+
+  <script>
+    init_field();
+  </script>
 </body>
 
 </html>
