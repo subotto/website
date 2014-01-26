@@ -678,24 +678,24 @@ iframe.twitter-timeline {
 }
 
 #player00, #player10 {
-    top: 80px;
+    top: 140px;
 }
 
 #player00_stats, #player10_stats {
-    top: 110px;
+    top: 170px;
 }
 
 #player01, #player11 {
-    top: 200px;
+    top: 260px;
 }
 
 #player01_stats, #player11_stats {
-    top: 230px;
+    top: 290px;
     border-bottom: 2px solid black;
 }
 
 #score0, #score1 {
-    top: 320px;
+    top: 60px;
     height: 60px;
     padding-top: 20px;
 }
@@ -740,4 +740,14 @@ iframe.twitter-timeline {
 
 #graph_all img, #graph_recent img {
     width: 440px;
+}
+
+/* Tabella statistiche */
+#statistics table td {
+    vertical-align: middle;
+}
+
+#statistics table td+td {
+    width: 30%;
+    text-align: center;
 }
