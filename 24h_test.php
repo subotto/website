@@ -157,16 +157,19 @@ function dataRefresh() {
 	$("#score1").load("stats/score1.html");
 	
 	// Statistics
-	$("#statistics").load("stats/statistics.html");
+	if ( n%3 == 0 ) {
+		$("#statistics").load("stats/statistics.html");
+	}
 	
 	// Graph
-	d = new Date();
-	$("#score_plot_all").attr("src", "stats/score_plot.png?"+d.getTime());
-	$("#score_plot_recent").attr("src", "stats/score_plot.png?"+d.getTime());
-	
+	if ( n%10 == 0 ) {
+		d = new Date();
+		$("#score_plot_all").attr("src", "stats/score_plot.png?"+d.getTime());
+		$("#score_plot_recent").attr("src", "stats/score_plot.png?"+d.getTime());
+	}
 	n = n+1;
 }
-setInterval( dataRefresh, 500 );
+setInterval( dataRefresh, 1000 );
 
 
 function toggle_interface(element) {
