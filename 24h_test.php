@@ -164,8 +164,8 @@ function dataRefresh() {
 	// Graph
 	if ( n%10 == 0 ) {
 		d = new Date();
-		$("#score_plot_all").attr("src", "stats/score_plot.png?"+d.getTime());
-		$("#score_plot_recent").attr("src", "stats/score_plot.png?"+d.getTime());
+		$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
+		$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
 	}
 	n = n+1;
 }
