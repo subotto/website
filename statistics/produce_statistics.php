@@ -1,8 +1,13 @@
 <?php
 
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+
 include_once "../db_connection/config.php";
 include_once "../db_connection/db.php";
 include_once "../inclusions.php";
+
 
 class Participation {
 	public $team;
@@ -30,7 +35,7 @@ class Participation {
 	}
 }
 
-class Player {
+class Player2 {
 	public $id;
 	public $fname;
 	public $lname;
@@ -108,7 +113,7 @@ $res = query("SELECT * FROM players");
 
 $players = array();
 foreach ( $res as $row ) {
-	$players[ (int)$row["id"] ] = new Player ( (int)$row["id"], $row["fname"], $row["lname"], $row["comment"] );
+	$players[ (int)$row["id"] ] = new Player2 ( (int)$row["id"], $row["fname"], $row["lname"], $row["comment"] );
 }
 
 
@@ -123,7 +128,6 @@ $input[1] = file( "turns2010.txt" );
 $input[2] = file( "turns2011.txt" );
 $input[3] = file( "turns2012.txt" );
 $input[4] = file( "turns2013.txt" );
-
 
 
 
@@ -199,7 +203,7 @@ foreach ( $input as $edition => $turns ) {
 
 // Inizio della parte di scrittura delle statistiche
 //C'è già altrove (almeno sul sito uz.sns.it/24ore)
-function format_time ($seconds) {
+function format_time2 ($seconds) {
 	$minutes = (int)round($seconds/60);
 	$hours = (int)($minutes/60);
 	$minutes = $minutes % 60;
@@ -238,10 +242,10 @@ function edition_statistics ($edition) {
 	foreach ( $participants as $player ) {
 		$part = $player->participations[$edition];
 		if ( $part->team == 1 ) {
-			$math_table[] = array( $player->fname . " " . $player->lname, format_time( $part->seconds ), $part->pos_goals, $part->neg_goals, $part->pos_goals - $part->neg_goals );
+			$math_table[] = array( $player->fname . " " . $player->lname, format_time2( $part->seconds ), $part->pos_goals, $part->neg_goals, $part->pos_goals - $part->neg_goals );
 		}
 		else {
-			$phys_table[] = array( $player->fname . " " . $player->lname, format_time( $part->seconds ), $part->pos_goals, $part->neg_goals, $part->pos_goals - $part->neg_goals );
+			$phys_table[] = array( $player->fname . " " . $player->lname, format_time2( $part->seconds ), $part->pos_goals, $part->neg_goals, $part->pos_goals - $part->neg_goals );
 		}
 	}
 	
@@ -288,14 +292,14 @@ function general_statistics() {
 			$list[] = $edition;
 		}
 		
-		$table[] = array( $player->fname . " " . $player->lname, implode(", ", $list), format_time( $total_seconds ), $total_pos, $total_neg, $total_pos - $total_neg, round($player->elo), $player->turns );
+		$table[] = array( $player->fname . " " . $player->lname, implode(", ", $list), format_time2( $total_seconds ), $total_pos, $total_neg, $total_pos - $total_neg, round($player->elo), $player->turns );
 	}
 	
 	$head = array ( "Giocatori", "Partecipazioni", "Tempo di gioco", "Gol fatti", "Gol subiti", "Differenza reti", "ELO", "Turni");
 	make_table( $table, "tabella", $head );
 }
 
-//general_statistics();
+general_statistics();
 //edition_statistics(4);
 
 

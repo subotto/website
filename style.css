@@ -1,6 +1,10 @@
 /**
  *  Cose utili
  */
+.hidden {
+    display: none;
+}
+
 .pull-right {
     float: right;
     clear: right;
@@ -605,4 +609,36 @@ iframe.twitter-timeline {
 
 #blue_score {
     right: 0;
+}
+
+.toggle {
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    height: 36px;
+}
+
+.toggle a {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+    height: 15px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+
+.toggle a.active {
+    color: black;
+    cursor: default;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    margin: 1px 0 0 0;
+}
+
+#graph_all img, #graph_recent img {
+    width: 440px;
 }
