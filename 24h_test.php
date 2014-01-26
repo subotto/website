@@ -13,8 +13,8 @@ start_box("24 ore: aggiornamento in tempo reale");
 <div id="time_box" ></div>
 
 <div class="toggle" >
-    <a onclick="toggle_interface(this)" class="active">Interfaccia grafica <!-- TODO: trovare un nome migliore --></a>
-    <a onclick="toggle_interface(this)">Interfaccia classica </a>
+    <a onclick="toggle_interface(this)" class="active">Visualizzazione classica </a>
+    <a onclick="toggle_interface(this)">Visualizzazione avanzata</a>
 </div>
 
 <div id="graphic_interface">
@@ -85,12 +85,12 @@ start_box("Statistiche", "purple", "480", "right");
 
 <?php
 end_box();
-start_box("Grafici", "orange", "480", "left");
+start_box("Grafico", "orange", "480", "left");
 ?>
 
 <div class="toggle" >
-    <a onclick="toggle_graph(this)" class="active">Grafico completo</a>
-    <a onclick="toggle_graph(this)">Grafico recente</a>
+    <a onclick="toggle_graph(this)" class="active">Tutta la partita</a>
+    <a onclick="toggle_graph(this)">Ultimi 30 minuti</a>
 </div>
 
 
