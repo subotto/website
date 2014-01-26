@@ -123,7 +123,7 @@ function dataRefresh() {
 	$("#time_box").load("stats/time.html");
 	
 	// Graphic interface
-	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") {
+	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") ) {
 		$("#red_team").load("stats/red_team.html");
 		$("#blue_team").load("stats/blue_team.html");
 	
@@ -142,7 +142,7 @@ function dataRefresh() {
 	}
 	
 	// Classic interface
-	if ( ! document.getElementById("classic_interface").classList.contains("hidden") {
+	if ( ! document.getElementById("classic_interface").classList.contains("hidden") ) {
 		$("#team0").load("stats/team0.html");
 		$("#team1").load("stats/team1.html");
 	
@@ -168,16 +168,16 @@ function dataRefresh() {
 	// Graph
 	if ( n%10 == 0 ) {
 		d = new Date();
-		if ( ! document.getElementById("graph_all").classList.contains("hidden graph") {
+		if ( ! document.getElementById("graph_all").classList.contains("hidden") ) {
 			$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
 		}
-		if ( ! document.getElementById("graph_recent").classList.contains("hidden graph") {
+		if ( ! document.getElementById("graph_recent").classList.contains("hidden") ) {
 			$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
 		}
 	}
 	n = n+1;
 }
-setInterval( dataRefresh, 1000 );
+var refresh = setInterval( dataRefresh, 1000 );
 
 
 function toggle_interface(element) {
