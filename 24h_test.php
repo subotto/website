@@ -177,8 +177,18 @@ function dataRefresh() {
 	}
 	n = n+1;
 }
-var refresh = setInterval( dataRefresh, 1000 );
 
+var refresh;
+
+function start_refresh() {
+	refresh = setInterval( dataRefresh, 1000 );
+}
+
+function stop_refresh() {
+	clearInterval(refresh);
+}
+
+start_refresh();
 
 function toggle_interface(element) {
     if(element.classList.contains("active")) return;
@@ -200,6 +210,10 @@ function toggle_graph(element) {
             continue;
         element.parentNode.children[e].classList.toggle("active");
     }
+    
+    stop_refresh();
+    n = 0;
+    start_refresh();
 }
 
 </script>
