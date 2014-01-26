@@ -123,38 +123,42 @@ function dataRefresh() {
 	$("#time_box").load("stats/time.html");
 	
 	// Graphic interface
-	$("#red_team").load("stats/red_team.html");
-	$("#blue_team").load("stats/blue_team.html");
+	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") {
+		$("#red_team").load("stats/red_team.html");
+		$("#blue_team").load("stats/blue_team.html");
 	
-	$("#red_score").load("stats/red_score.html");
-	$("#blue_score").load("stats/blue_score.html");
+		$("#red_score").load("stats/red_score.html");
+		$("#blue_score").load("stats/blue_score.html");
 	
-	$("#red_attacker").load("stats/red_attacker.html");
-	$("#red_defender").load("stats/red_defender.html");
-	$("#blue_attacker").load("stats/blue_attacker.html");
-	$("#blue_defender").load("stats/blue_defender.html");
+		$("#red_attacker").load("stats/red_attacker.html");
+		$("#red_defender").load("stats/red_defender.html");
+		$("#blue_attacker").load("stats/blue_attacker.html");
+		$("#blue_defender").load("stats/blue_defender.html");
 	
-	$("#red_attacker_stats").load("stats/red_attacker_stats.html");
-	$("#red_defender_stats").load("stats/red_defender_stats.html");
-	$("#blue_attacker_stats").load("stats/blue_attacker_stats.html");
-	$("#blue_defender_stats").load("stats/blue_defender_stats.html");
+		$("#red_attacker_stats").load("stats/red_attacker_stats.html");
+		$("#red_defender_stats").load("stats/red_defender_stats.html");
+		$("#blue_attacker_stats").load("stats/blue_attacker_stats.html");
+		$("#blue_defender_stats").load("stats/blue_defender_stats.html");
+	}
 	
 	// Classic interface
-	$("#team0").load("stats/team0.html");
-	$("#team1").load("stats/team1.html");
+	if ( ! document.getElementById("classic_interface").classList.contains("hidden") {
+		$("#team0").load("stats/team0.html");
+		$("#team1").load("stats/team1.html");
 	
-	$("#player00").load("stats/player00.html");
-	$("#player01").load("stats/player01.html");
-	$("#player10").load("stats/player10.html");
-	$("#player11").load("stats/player11.html");
+		$("#player00").load("stats/player00.html");
+		$("#player01").load("stats/player01.html");
+		$("#player10").load("stats/player10.html");
+		$("#player11").load("stats/player11.html");
 	
-	$("#player00_stats").load("stats/player00_stats.html");
-	$("#player01_stats").load("stats/player01_stats.html");
-	$("#player10_stats").load("stats/player10_stats.html");
-	$("#player11_stats").load("stats/player11_stats.html");
+		$("#player00_stats").load("stats/player00_stats.html");
+		$("#player01_stats").load("stats/player01_stats.html");
+		$("#player10_stats").load("stats/player10_stats.html");
+		$("#player11_stats").load("stats/player11_stats.html");
 	
-	$("#score0").load("stats/score0.html");
-	$("#score1").load("stats/score1.html");
+		$("#score0").load("stats/score0.html");
+		$("#score1").load("stats/score1.html");
+	}
 	
 	// Statistics
 	if ( n%3 == 0 ) {
@@ -164,8 +168,12 @@ function dataRefresh() {
 	// Graph
 	if ( n%10 == 0 ) {
 		d = new Date();
-		$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
-		$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
+		if ( ! document.getElementById("graph_all").classList.contains("hidden graph") {
+			$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
+		}
+		if ( ! document.getElementById("graph_recent").classList.contains("hidden graph") {
+			$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
+		}
 	}
 	n = n+1;
 }
