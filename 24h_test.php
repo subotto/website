@@ -17,7 +17,7 @@ start_box("24 ore: aggiornamento in tempo reale");
     <a onclick="toggle_interface(this)">Visualizzazione avanzata</a>
 </div>
 
-<div id="graphic_interface">
+<div id="graphic_interface" class="hidden">
 
 	<div id="blue_team"></div>
 	
@@ -51,7 +51,7 @@ start_box("24 ore: aggiornamento in tempo reale");
 </div>
 
 
-<div id="classic_interface" class="hidden">
+<div id="classic_interface">
 	
 	<div id="team0"></div>
 	<div id="team1"></div>
