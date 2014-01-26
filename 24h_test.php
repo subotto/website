@@ -52,7 +52,24 @@ start_box("24 ore: aggiornamento in tempo reale");
 
 
 <div id="classic_interface" class="hidden">
-	...
+	
+	<div id="team0"></div>
+	<div id="team1"></div>
+	
+	<div id="player00"></div>
+	<div id="player01"></div>
+	<div id="player10"></div>
+	<div id="player11"></div>
+	
+	<div id="player00_stats"></div>
+	<div id="player01_stats"></div>
+	<div id="player10_stats"></div>
+	<div id="player11_stats"></div>
+	
+	<div id="score0"></div>
+	<div id="score1"></div>
+	
+	
 </div>
 
 
@@ -124,6 +141,23 @@ function dataRefresh() {
 	$("#red_defender_stats").load("stats/red_defender_stats.html");
 	$("#blue_attacker_stats").load("stats/blue_attacker_stats.html");
 	$("#blue_defender_stats").load("stats/blue_defender_stats.html");
+	
+	// Classic interface
+	$("#team0").load("stats/team0.html");
+	$("#team1").load("stats/team1.html");
+	
+	$("#player00").load("stats/player00.html");
+	$("#player01").load("stats/player01.html");
+	$("#player10").load("stats/player10.html");
+	$("#player11").load("stats/player11.html");
+	
+	$("#player00_stats").load("stats/player00_stats.html");
+	$("#player01_stats").load("stats/player01_stats.html");
+	$("#player10_stats").load("stats/player10_stats.html");
+	$("#player11_stats").load("stats/player11_stats.html");
+	
+	$("#score0").load("stats/score0.html");
+	$("#score1").load("stats/score1.html");
 	
 	// Statistics
 	$("#general_stats").load("stats/general_stats.html");
