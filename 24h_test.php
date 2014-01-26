@@ -78,10 +78,7 @@ end_box();
 start_box("Statistiche", "purple", "480", "right");
 ?>
 
-<div id="statistics">
-	<div id="general_stats"></div>
-	<div id="projection"></div>
-</div>
+<div id="statistics"></div>
 
 <?php
 end_box();
@@ -160,8 +157,7 @@ function dataRefresh() {
 	$("#score1").load("stats/score1.html");
 	
 	// Statistics
-	$("#general_stats").load("stats/general_stats.html");
-	$("#projection").load("stats/projection.html");
+	$("#statistics").load("stats/statistics.html");
 	
 	// Graph
 	d = new Date();
