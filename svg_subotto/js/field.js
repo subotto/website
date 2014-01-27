@@ -387,8 +387,12 @@ function request_new_frames(){
 
 function start_svg() {
 
-    update_everything_handle = setInterval(update_everything, 1000/fps);
-    request_new_frames_handle = setInterval(request_new_frames, 1000/2);
+    if (update_everything_handle == null) {
+        update_everything_handle = setInterval(update_everything, 1000/fps);
+    }
+    if (request_new_frames_handle == null) {
+        request_new_frames_handle = setInterval(request_new_frames, 1000/2);
+    }
 
 }
 
