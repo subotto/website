@@ -109,8 +109,15 @@ function menu($countdown = TRUE, $group = "home") {
 			        countdown.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
 		        }
 		        function update_score() {
-		          
-		          
+		          var start_date = new Date("Jan 28, 2014 22:00:00").getTime();
+		          var current_date = new Date().getTime();
+		          if(current_date < start_date) {
+		            return;
+		          }
+		          $("#team-0").load("stats.php?page_name=team0");
+		          $("#team-1").load("stats.php?page_name=team1");
+		          $("#score-0").load("stats.php?page_name=score0");
+		          $("#score-1").load("stats.php?page_name=score1");
 		        }
 		        // update the tag with id "countdown" every 1 second
 		        setInterval(update_timer, 1000);
