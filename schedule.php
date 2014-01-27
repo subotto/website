@@ -59,7 +59,7 @@ function boris_lagnasco() {
 <tr><td>18.30 - 19.00</td><td>Gennady N. Uraltsev, Carlo Mantegazza</td><td>Giacomo De Palma, Glauco Schettini</td></tr>
 <tr><td>19.00 - 19.20</td><td>Laura Capuano, Alessandra Caraceni</td><td>Filippo Revello, Matteo Becchi</td></tr>
 <tr><td>19.20 - 19.40</td><td>Aleksandra Baranova, Alessandro Malusà</td><td>Jinglei Zhang, Matteo Ippoliti</td></tr>
-<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Davide Napoli, Paolo Abiuso</td></tr>
+<tr><td>19.40 - 20.00</td><td>Marco Robertini, Francesco Giancane</td><td>Davide Napoli, Luca Baroni</td></tr>
 
 </tbody>
 </table>
