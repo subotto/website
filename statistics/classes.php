@@ -349,8 +349,9 @@ class Edition {
 		$conn = connetti();
 		
 		// Query per i dati principali della partita
-		$query = "SELECT m.year, m.place, t1.id AS t1_id, t1.name AS t1_name, t2.id AS t2_id, t2.name AS t2_name, p1.id AS p1_id, p1.fname AS p1_fname, p1.lname AS p1_lname, p2.id AS p2_id, p2.fname AS p2_fname, p2.lname AS p2_lname, p3.id AS p3_id, p3.fname AS p3_fname, p3.lname AS p3_lname, p4.id AS p4_id, p4.fname AS p4_fname, p4.lname AS p4_lname, m.begin, m.end FROM matches AS m INNER JOIN players AS p1 ON m.team_a_captain_id = p1.id INNER JOIN players AS p2 ON m.team_a_deputy_id = p2.id INNER JOIN players AS p3 ON m.team_b_captain_id = p3.id INNER JOIN players AS p4 ON m.team_b_deputy_id = p4.id INNER JOIN teams AS t1 ON m.team_a_id = t1.id INNER JOIN teams AS t2 ON m.team_b_id = t2.id WHERE m.id = ".$this->id;
-				
+		$query = "SELECT m.year, m.place, t1.id AS t1_id, t1.name AS t1_name, t2.id AS t2_id, t2.name AS t2_name, p1.id AS p1_id, p1.fname AS p1_fname, p1.lname AS p1_lname, p2.id AS p2_id, p2.fname AS p2_fname, p2.lname AS p2_lname, p3.id AS p3_id, p3.fname AS p3_fname, p3.lname AS p3_lname, p4.id AS p4_id, p4.fname AS p4_fname, p4.lname AS p4_lname, m.begin, m.end
+			FROM matches AS m INNER JOIN players AS p1 ON m.team_a_captain_id = p1.id INNER JOIN players AS p2 ON m.team_a_deputy_id = p2.id INNER JOIN players AS p3 ON m.team_b_captain_id = p3.id INNER JOIN players AS p4 ON m.team_b_deputy_id = p4.id INNER JOIN teams AS t1 ON m.team_a_id = t1.id INNER JOIN teams AS t2 ON m.team_b_id = t2.id WHERE m.id = ".$this->id;
+		
 		$res = query($query);
 		
 		if ( count($res) == 0 ) {
