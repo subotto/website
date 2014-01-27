@@ -182,8 +182,6 @@ function create_ball(draw) {
 		ball.move = function(x,y) {
         ball.path.attr({ fill: '#fff', stroke: '#000' });
 				if (x==null || y==null) {
-            ball.x = 1000.0;
-            ball.y = 1000.0;
             ball.path.attr({ fill: 'none', stroke: 'none' });
         }
 				ball.x=x;
