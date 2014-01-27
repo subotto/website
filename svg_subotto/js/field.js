@@ -180,8 +180,12 @@ function create_ball(draw) {
 		ball.y=0;
 
 		ball.move = function(x,y) {
-				if (x==null || y==null)
-					  return;
+        ball.path.attr({ fill: '#fff', stroke: '#000' });
+				if (x==null || y==null) {
+            ball.x = 1000.0;
+            ball.y = 1000.0;
+            ball.path.attr({ fill: 'none', stroke: 'none' });
+        }
 				ball.x=x;
 				ball.y=y;
 		}
@@ -337,11 +341,11 @@ function update_everything() {
     function max(a, b) { if (a > b) return a; else return b; }
 
     // If the buffer is too long, trim it a bit
-    var max_length = 5.0 * fps;
-    //if (frames.length > max_length) {
-    //    time_delta -= (frames.length - max_length) / fps;
-    //}
-    var good_length = 3.0 * fps;
+    var max_length = 10.0 * fps;
+    if (frames.length > max_length) {
+        time_delta -= (frames.length - max_length) / fps;
+    }
+    var good_length = 4.0 * fps;
     if (frames.length > good_length) {
         time_delta -= max(0.1, 0.005 * (frames.length - good_length)) / fps;
     }
