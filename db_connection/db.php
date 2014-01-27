@@ -19,8 +19,6 @@ function disconnetti($dbconn) {
 
 
 function query($query, $formattato = TRUE) {
-	//$dbconn = pg_connect("host=roma.uz.sns.it dbname=subotto user=subotto password=password") or die('Could not connect: ' . pg_last_error());
-	
 	if ( !$GLOBALS["connection"] ) return NULL;
 
 	$result = pg_query($query) or die('Query failed: ' . pg_last_error());
