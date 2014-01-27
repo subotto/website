@@ -124,11 +124,15 @@ foreach ( $res as $row ) {
 $input = array();
 
 // L'indice è il match_id (sotto è chiamato anche "edition")
-$input[1] = file( "turns2010.txt" );
-$input[2] = file( "turns2011.txt" );
-$input[3] = file( "turns2012.txt" );
-$input[4] = file( "turns2013.txt" );
+// $input[1] = file( "turns2010.txt" );
+// $input[2] = file( "turns2011.txt" );
+// $input[3] = file( "turns2012.txt" );
+// $input[4] = file( "turns2013.txt" );
 
+$input[1] = file( "test2010.txt" );
+$input[2] = file( "test2011.txt" );
+$input[3] = file( "test2012.txt" );
+$input[4] = file( "test2013.txt" );
 
 
 // Elaboro i dati
@@ -299,7 +303,7 @@ function general_statistics() {
 	make_table( $table, "tabella", $head );
 }
 
-general_statistics();
+//general_statistics();
 //edition_statistics(4);
 
 

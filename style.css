@@ -254,9 +254,9 @@ table thead {
 	background: linear-gradient(to right, rgb(188, 216, 230) 0px, rgb(229, 241, 247) 100%) repeat scroll 0% 0% transparent;
     background: -webkit-linear-gradient(left, rgb(188, 216, 230), rgb(229, 241, 247)) repeat scroll 0% 0% transparent;
     background: -moz-linear-gradient(left, rgb(188, 216, 230), rgb(229, 241, 247)) repeat scroll 0% 0% transparent;
-    padding: 10px;
-    width: 200px;
+    width: 220px;
     height: 66px;
+    padding-top: 5px;
     position: absolute;
     top: 0;
     text-align: center;
@@ -280,13 +280,8 @@ table thead {
 
 .score {
 	width: 80px;
-}
-
-.score-mat {
-	text-align: right;
-}
-.score-fis {
-	text-align: left;
+	text-align: center;
+	text-align: center;
 }
 
 .scoreboard-separator {
@@ -349,6 +344,8 @@ table thead {
     -moz-box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.5);
     -webkit-box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.5);
     margin-bottom: 45px;
+    position: relative;
+    font-size: 13px;
 }
 
 .box .box-content {
@@ -447,9 +444,7 @@ table thead {
     -moz-box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.5);
     -webkit-box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.5);
     margin-bottom: 50px;
-    
 	padding: 20px 20px 20px 20px;
-	
 	color: rgb(36, 108, 183);
 	font-size: 2.1em;
 	font-weight: bold;
@@ -467,13 +462,8 @@ iframe.twitter-timeline {
 }
 
 /* Streaming */
-.quality-buttons form {
-    display: inline-block;
-    margin: 0 120px 20px 120px;
-}
-
-.quality-buttons {
-    text-align: center;
+#low_quality, #hi_quality {
+    margin-top: 20px;
 }
 
 /* Grafici */
@@ -486,6 +476,7 @@ iframe.twitter-timeline {
 #time_box {
     text-align: right;
     font-size: 40px;
+    display: none;
 }
 
 
@@ -498,8 +489,9 @@ iframe.twitter-timeline {
 
 #blue_team, #red_team {
     position: absolute;
-    width: 954px;
+    width: 964px;
     font-size: 40px;
+    font-variant: small-caps;
     text-align: center;
 }
 
@@ -516,7 +508,6 @@ iframe.twitter-timeline {
 .stats {
     display: inline-block;
     position: absolute;
-    font-size: 12px;
     text-align: left;
     width: 220px;
     padding: 5px;
@@ -525,6 +516,13 @@ iframe.twitter-timeline {
     z-index: 500;
 }
 
+#red_team, #red_attacker, #red_defender, #red_score {
+    color: #c00;
+}
+
+#blue_team, #blue_attacker, #blue_defender, #blue_score {
+    color: #00c;
+}
 
 #blue_attacker_stats, #red_defender_stats {
     left: -11px;
@@ -600,18 +598,22 @@ iframe.twitter-timeline {
 
 #red_score, #blue_score {
     position: absolute;
-    top: 210px;
+    top: 190px;
     font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 15px;
     width: 230px;
     text-align: center;
+    border: 1px solid #ccc;
 }
 
 #red_score {
-    left: 0;
+    left: -10px;
 }
 
 #blue_score {
-    right: 0;
+    right: -10px;
 }
 
 /* Interfaccia vecchia */
@@ -637,13 +639,14 @@ iframe.twitter-timeline {
 
 #player00, #player01, #player10, #player11 {
     text-align: center;
-    font-size: 20px;
-    height: 30px;
+    font-size: 23px;
+    height: 35px;
     border-top: 2px solid black;
+    padding-top: 5px;
 }
 
 #player00_stats, #player01_stats, #player10_stats, #player11_stats {
-    height: 90px;
+    height: 120px;
 }
 
 #player00, #player01, #player00_stats, #player01_stats {
@@ -682,15 +685,15 @@ iframe.twitter-timeline {
 }
 
 #player00_stats, #player10_stats {
-    top: 170px;
+    top: 180px;
 }
 
 #player01, #player11 {
-    top: 260px;
+    top: 300px;
 }
 
 #player01_stats, #player11_stats {
-    top: 290px;
+    top: 340px;
     border-bottom: 2px solid black;
 }
 
@@ -708,13 +711,45 @@ iframe.twitter-timeline {
     left: 477px;
 }
 
+/* Tabelle statistiche */
+
+.player_stats tr, .player_stats td {
+    border: none;
+    background: transparent !important;
+}
+
+.player_stats td+td {
+    text-align: left;
+    width: 70px;
+}
+
+#graphic_interface .player_stats td:first-child {
+    text-align: right;
+}
+
+.all_matches td:first-child {
+    font-style: italic;
+}
+
+#classic_interface .player_stats {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 240px;
+}
+
+#classic_interface .player_stats td+td {
+    text-align: right;
+}
+
 /* Switch */
 
 .toggle {
     text-align: right;
-    border-bottom: 1px solid #ccc;
     display: block;
     height: 36px;
+    position: absolute;
+    top: -38px;
+    right: -1px;
 }
 
 .toggle a {
@@ -722,23 +757,24 @@ iframe.twitter-timeline {
     text-decoration: none;
     padding: 10px;
     height: 15px;
-    margin-left: 1px;
-    margin-right: 1px;
+    font-size: 13px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    border: 1px solid #ddd;
 }
 
 
 .toggle a.active {
     color: black;
     cursor: default;
-    background-color: white;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
     margin: 1px 0 0 0;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white;
 }
 
-#graph_all img, #graph_recent img {
+#full_graph img, #recent_graph img {
     width: 440px;
 }
 
@@ -748,6 +784,10 @@ iframe.twitter-timeline {
 }
 
 #statistics table td+td {
-    width: 30%;
+    width: 40%;
     text-align: center;
+}
+
+#statistics table table tr {
+    background: transparent;
 }

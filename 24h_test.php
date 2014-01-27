@@ -12,9 +12,9 @@ start_box("24 ore: aggiornamento in tempo reale");
 
 <div id="time_box" ></div>
 
-<div class="toggle" >
-    <a onclick="toggle_interface(this)" class="active">Visualizzazione classica </a>
-    <a onclick="toggle_interface(this)">Visualizzazione avanzata</a>
+<div class="toggle" id="toggle_interface">
+    <a onclick="toggle(this)" id="tab_classic" class="active">Visualizzazione classica</a>
+    <a onclick="toggle(this)" id="tab_graphic">Visualizzazione avanzata</a>
 </div>
 
 <div id="graphic_interface" class="hidden">
@@ -72,6 +72,14 @@ start_box("24 ore: aggiornamento in tempo reale");
 	
 </div>
 
+<script>
+function interface_callback(active) {
+    if (active == "classic") stop_svg();
+    else start_svg();
+}
+
+loadtoggle("interface");
+</script>
 
 <?php
 end_box();
@@ -85,18 +93,18 @@ end_box();
 start_box("Grafico", "orange", "480", "left");
 ?>
 
-<div class="toggle" >
-    <a onclick="toggle_graph(this)" class="active">Tutta la partita</a>
-    <a onclick="toggle_graph(this)">Ultimi 30 minuti</a>
+
+<div class="toggle" id="toggle_graph">
+    <a onclick="toggle(this)" id="tab_full" class="active">Tutta la partita</a>
+    <a onclick="toggle(this)" id="tab_recent">Ultimi 30 minuti</a>
 </div>
 
-
-<div id="graph_all" class="graph">
+<div id="full_graph" class="graph">
 	<img id="score_plot_all" />
 </div>
 
 
-<div id="graph_recent" class="hidden graph">
+<div id="recent_graph" class="hidden graph">
 	<img id="score_plot_recent" />
 </div>
 
@@ -166,10 +174,10 @@ function dataRefresh() {
 	// Graph
 	if ( n%10 == 0 ) {
 		d = new Date();
-		if ( ! document.getElementById("graph_all").classList.contains("hidden") ) {
+		if ( ! document.getElementById("full_graph").classList.contains("hidden") ) {
 			$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
 		}
-		if ( ! document.getElementById("graph_recent").classList.contains("hidden") ) {
+		if ( ! document.getElementById("recent_graph").classList.contains("hidden") ) {
 			$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
 		}
 	}
@@ -188,38 +196,13 @@ function stop_refresh() {
 
 start_refresh();
 
-function toggle_interface(element) {
-    if(element.classList.contains("active")) return;
-    document.getElementById("classic_interface").classList.toggle("hidden");
-    document.getElementById("graphic_interface").classList.toggle("hidden");
-    for(e in element.parentNode.children) {
-        if(element.parentNode.children[e].classList === undefined)
-            continue;
-        element.parentNode.children[e].classList.toggle("active");
-    }
-    
-    if (document.getElementById("classic_interface").classList.contains("hidden")) {
-    	start_svg();
-    }
-    if (document.getElementById("graphic_interface").classList.contains("hidden")) {
-    	stop_svg();
-    }
-}
-
-function toggle_graph(element) {
-    if(element.classList.contains("active")) return;
-    document.getElementById("graph_all").classList.toggle("hidden");
-    document.getElementById("graph_recent").classList.toggle("hidden");
-    for(e in element.parentNode.children) {
-        if(element.parentNode.children[e].classList === undefined)
-            continue;
-        element.parentNode.children[e].classList.toggle("active");
-    }
-    
+function graph_callback(active) {
     stop_refresh();
     n = 0;
     start_refresh();
 }
+
+loadtoggle("graph");
 
 </script>
 

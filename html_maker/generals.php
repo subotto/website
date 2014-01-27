@@ -42,6 +42,7 @@ function start_html($titolo, $streaming = FALSE, $live_score = FALSE) {
 		
 		<script src="js/functions.js"></script>
 		<script src="js/sorttable.js"></script>
+		<script src="js/toggle.js"></script>
 		<script>
 		  var status = 0;
 		  document.getElementById("body").onkeydown = function(e) {

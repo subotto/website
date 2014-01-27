@@ -39,18 +39,19 @@ function menu($countdown = TRUE, $group = "home") {
               </span>
               <span class="lightblue lightblue-right"></span>
               <span class="scoreboard-background">
-              <!-- Disabilitato fino alla 24 ore
                 <span class="scoreboard">
-					<div class="bigger">
-						<span class="score score-mat" id="score-mat">&ndash;</span><span class="scoreboard-separator">:</span><span class="score score-fis" id="score-fis">&ndash;</span>
-					</div>
-					<div>
-						<span class="score score-mat" id="score-mat">Matematici</span><span class="scoreboard-separator"></span><span class="score score-fis" id="score-fis">Fisici</span>
-					</div>
-				</span>
-				-->
+                  <div class="bigger">
+                    <span class="score score-mat" id="score-0">&ndash;</span>
+                    <span class="scoreboard-separator">:</span>
+                    <span class="score score-fis" id="score-1">&ndash;</span>
+                  </div>
+                  <div>
+                    <span class="score score-mat" id="team-0">Matematici</span>
+                    <span class="scoreboard-separator"></span>
+                    <span class="score score-fis" id="team-1">Fisici</span>
+                  </div>
+                </span>
               </span>
-              
             </div>
             <nav class="links links-upper white">
               <li><a href="index.php">Home</a></li>
@@ -86,6 +87,11 @@ function menu($countdown = TRUE, $group = "home") {
 			        // find the amount of "seconds" between now and target
 			        var current_date = new Date().getTime();
 			        var seconds_left = (target_date - current_date) / 1000;
+			        if(seconds_left < 0) {
+			            countdown.innerHTML = "Partita iniziata da <span id='dtime' class='big'></span>";
+			            $("#dtime").load("stats.php?page_name=time");
+			            return;
+			        }
 			        // do some time calculations
 			        days = parseInt(seconds_left / 86400);
 			        seconds_left = seconds_left % 86400;
@@ -102,9 +108,16 @@ function menu($countdown = TRUE, $group = "home") {
 			            countdown.innerHTML = '';
 			        countdown.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
 		        }
+		        function update_score() {
+		          
+		          
+		        }
 		        // update the tag with id "countdown" every 1 second
 		        setInterval(update_timer, 1000);
 		        update_timer();
+
+		        setInterval(update_score, 1000);
+		        update_score();
 	        </script>
             <?php
 	        }
