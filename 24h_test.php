@@ -112,11 +112,9 @@ if ( $status != "before" ) {
 */
 ?>
 
-<script>
-init_field();
-</script>
-
 <script type="text/javascript">
+
+init_field();
 
 var n=0;
 function dataRefresh() {
@@ -198,6 +196,13 @@ function toggle_interface(element) {
         if(element.parentNode.children[e].classList === undefined)
             continue;
         element.parentNode.children[e].classList.toggle("active");
+    }
+    
+    if (document.getElementById("classic_interface").classList.contains("hidden")) {
+    	start_svg();
+    }
+    if (document.getElementById("graphic_interface").classList.contains("hidden")) {
+    	stop_svg();
     }
 }
 
