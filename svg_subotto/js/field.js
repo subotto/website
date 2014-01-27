@@ -316,7 +316,7 @@ function addNewFrames(response) {
     if (frames.length > 0) {
         last_timestamp=frames[frames.length-1].timestamp;
     }
-		if (time_delta<0) {
+		if (time_delta<0 && frames[0].timestamp !== undefined) {
 				time_delta=(new Date().getTime())/1000 - frames[0].timestamp;
 				//debug(time_delta);
 		}
