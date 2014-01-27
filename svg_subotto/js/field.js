@@ -9,6 +9,7 @@ var time_delta=-1;
 var frames=[];
 var stop = false;
 var update_everything_handle = null;
+var request_new_frames_handle = null;
 var last_timestamp = null;
 var updating_frames = false;
 
@@ -189,7 +190,7 @@ function create_ball(draw) {
 		}
 
 		ball.path=draw.circle(20);
-		ball.path.attr({ fill: '#fff' , stroke: '#000', 'stroke-width': 2})
+		ball.path.attr({ fill: 'none' , stroke: 'none', 'stroke-width': 2})
 
 		ball.draw=function() {
 				ball.path.move(subx2x(ball.x)-ball.path.bbox().width/2, suby2y(ball.y)-ball.path.bbox().height/2);
@@ -303,7 +304,8 @@ function print_frames() {
 function addNewFrames(response) {
     if (fps != response.fps) {
         fps = response.fps;
-        update_everything_timer();
+        stop_svg();
+        start_svg();
     }
     /*if (response.data.length > 0)
       debug("Adding frames!");
@@ -370,11 +372,37 @@ function update_everything() {
     //print_frames();
 }
 
-function update_everything_timer() {
+function request_new_frames(){
+    if (stop) return;
+    if (updating_frames) return;
+    updating_frames = true;
+		if (last_timestamp != null) {
+				$.getJSON(request_url, {'last_timestamp' : last_timestamp.toFixed(6)},
+					        addNewFrames);
+		} else {
+				$.getJSON(request_url, {'last_timestamp' : "0"},
+					        addNewFrames);
+		}
+}
+
+function start_svg() {
+
+    update_everything_handle = setInterval(update_everything, 1000/fps);
+    request_new_frames_handle = setInterval(request_new_frames, 1000/2);
+
+}
+
+function stop_svg() {
+
     if (update_everything_handle != null) {
         clearInterval(update_everything_handle);
+        update_everything_handle = null;
     }
-    update_everything_handle = setInterval(update_everything, 1000/fps);
+    if (request_new_frames_handle != null) {
+        clearInterval(request_new_frames_handle);
+        request_new_frames_handle = null;
+    }
+
 }
 
 function init_field() {
@@ -395,20 +423,6 @@ function init_field() {
 			  table.draw();
 		});
 
-    update_everything_timer();
+    //start_svg();
 
-		setInterval(
-        function(){
-            if (stop) return;
-            if (updating_frames) return;
-            updating_frames = true;
-			      if (last_timestamp != null) {
-				        $.getJSON(request_url, {'last_timestamp' : last_timestamp.toFixed(6)},
-					                addNewFrames);
-			      } else {
-				        $.getJSON(request_url, {'last_timestamp' : "0"},
-					                addNewFrames);
-			      }
-		    },
-        1000/2);
 }
