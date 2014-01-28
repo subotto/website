@@ -147,7 +147,7 @@ init_field();
 
 var n=0;
 function dataRefresh() {
-	$("#time_box").load("stats/time.html");
+	$("#time_box").load("stats.php?page_name=time");
 	$("#team_0").load("stats.php?page_name=team0");
     $("#team_1").load("stats.php?page_name=team1");
 	$("#team_-0").load("stats.php?page_name=team0");
@@ -155,45 +155,45 @@ function dataRefresh() {
 	
 	// Graphic interface
 	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") ) {
-		$("#red_team").load("stats/red_team.html");
-		$("#blue_team").load("stats/blue_team.html");
+		$("#red_team").load("stats.php?page_name=red_team");
+		$("#blue_team").load("stats.php?page_name=blue_team");
 	
-		$("#red_score").load("stats/red_score.html");
-		$("#blue_score").load("stats/blue_score.html");
+		$("#red_score").load("stats.php?page_name=red_score");
+		$("#blue_score").load("stats.php?page_name=blue_score");
 	
-		$("#red_attacker").load("stats/red_attacker.html");
-		$("#red_defender").load("stats/red_defender.html");
-		$("#blue_attacker").load("stats/blue_attacker.html");
-		$("#blue_defender").load("stats/blue_defender.html");
+		$("#red_attacker").load("stats.php?page_name=red_attacker");
+		$("#red_defender").load("stats.php?page_name=red_defender");
+		$("#blue_attacker").load("stats.php?page_name=blue_attacker");
+		$("#blue_defender").load("stats.php?page_name=blue_defender");
 	
-		$("#red_attacker_stats").load("stats/red_attacker_stats.html");
-		$("#red_defender_stats").load("stats/red_defender_stats.html");
-		$("#blue_attacker_stats").load("stats/blue_attacker_stats.html");
-		$("#blue_defender_stats").load("stats/blue_defender_stats.html");
+		$("#red_attacker_stats").load("stats.php?page_name=red_attacker_stats");
+		$("#red_defender_stats").load("stats.php?page_name=red_defender_stats");
+		$("#blue_attacker_stats").load("stats.php?page_name=blue_attacker_stats");
+		$("#blue_defender_stats").load("stats.php?page_name=blue_defender_stats");
 	}
 	
 	// Classic interface
 	if ( ! document.getElementById("classic_interface").classList.contains("hidden") ) {
-		$("#team0").load("stats/team0.html");
-		$("#team1").load("stats/team1.html");
+		$("#team0").load("stats.php?page_name=team0");
+		$("#team1").load("stats.php?page_name=team1");
 	
-		$("#player00").load("stats/player00.html");
-		$("#player01").load("stats/player01.html");
-		$("#player10").load("stats/player10.html");
-		$("#player11").load("stats/player11.html");
+		$("#player00").load("stats.php?page_name=player00");
+		$("#player01").load("stats.php?page_name=player01");
+		$("#player10").load("stats.php?page_name=player10");
+		$("#player11").load("stats.php?page_name=player11");
 	
-		$("#player00_stats").load("stats/player00_stats.html");
-		$("#player01_stats").load("stats/player01_stats.html");
-		$("#player10_stats").load("stats/player10_stats.html");
-		$("#player11_stats").load("stats/player11_stats.html");
+		$("#player00_stats").load("stats.php?page_name=player00_stats");
+		$("#player01_stats").load("stats.php?page_name=player01_stats");
+		$("#player10_stats").load("stats.php?page_name=player10_stats");
+		$("#player11_stats").load("stats.php?page_name=player11_stats");
 	
-		$("#score0").load("stats/score0.html");
-		$("#score1").load("stats/score1.html");
+		$("#score0").load("stats.php?page_name=score0");
+		$("#score1").load("stats.php?page_name=score1");
 	}
 	
 	// Statistics
 	if ( n%3 == 0 ) {
-		$("#statistics").load("stats/statistics.html");
+		$("#statistics").load("stats.php?page_name=statistics");
 	}
 	
 	// Graph
