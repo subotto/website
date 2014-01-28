@@ -48,7 +48,7 @@ start_box("24 ore: aggiornamento in tempo reale");
 
     <div id="debug_div"></div>
     <div id="frames_div"></div>
-    <div id="time"></div>
+    <div id="time" display="none"></div>
 
 </div>
 
