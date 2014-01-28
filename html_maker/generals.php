@@ -18,6 +18,7 @@ function start_html($titolo, $streaming = FALSE, $live_score = FALSE) {
 			<?php echo $titolo; ?>
 			</title>
 			<link rel="stylesheet" type="text/css" href="style.css" />
+			<script src="svg_subotto/js/jquery.js"></script>
 			
 			<?php
 			if ( $streaming ) {
@@ -29,7 +30,6 @@ function start_html($titolo, $streaming = FALSE, $live_score = FALSE) {
 			
 			if ( $live_score ) {
 				?>
-				<script src="svg_subotto/js/jquery.js"></script>
 				<script src="svg_subotto/js/svg.js"></script>
 				<script src="svg_subotto/js/field.js"></script>
 				<?php
