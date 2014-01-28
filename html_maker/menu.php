@@ -39,18 +39,18 @@ function menu($countdown = TRUE, $group = "home") {
               </span>
               <span class="lightblue lightblue-right"></span>
               <span class="scoreboard-background">
-                <span class="scoreboard">
-                  <div class="bigger">
-                    <span class="score score-mat" id="score-0">&ndash;</span>
-                    <span class="scoreboard-separator">:</span>
-                    <span class="score score-fis" id="score-1">&ndash;</span>
-                  </div>
-                  <div>
-                    <span class="score score-mat" id="team-0">Matematici</span>
-                    <span class="scoreboard-separator"></span>
-                    <span class="score score-fis" id="team-1">Fisici</span>
-                  </div>
-                </span>
+                <table class="scoreboard">
+                  <tr class="bigger">
+                    <td class="score score-mat" id="score-0">&ndash;</td>
+                    <td class="scoreboard-separator">:</span>
+                    <td class="score score-fis" id="score-1">&ndash;</td>
+                  </tr>
+                  <tr>
+                    <td class="score score-mat" id="team-0">Matematici</td>
+                    <td class="scoreboard-separator"></td>
+                    <td class="score score-fis" id="team-1">Fisici</td>
+                  </tr>
+                </table>
               </span>
             </div>
             <nav class="links links-upper white">
@@ -77,6 +77,7 @@ function menu($countdown = TRUE, $group = "home") {
               </div>
             </div>
 	        <script language="JavaScript">
+	            var status = "<?php echo trim(file_get_contents("stats/fake.html"));?>";
 		        // set the date we're counting down to
 		        var target_date = new Date("Jan 28, 2014 22:00:00").getTime();
 		        // variables for time units
@@ -84,47 +85,53 @@ function menu($countdown = TRUE, $group = "home") {
 		        // get tag element
 		        var countdown = document.getElementById("countdown");
 		        function update_timer() {
-			        // find the amount of "seconds" between now and target
-			        var current_date = new Date().getTime();
-			        var seconds_left = (target_date - current_date) / 1000;
-			        if(seconds_left < 0) {
+                    if(status === "running" || status === "advantages") {
 			            countdown.innerHTML = "Partita iniziata da <span id='dtime' class='big'></span>";
 			            $("#dtime").load("stats.php?page_name=time");
 			            return;
-			        }
-			        // do some time calculations
-			        days = parseInt(seconds_left / 86400);
-			        seconds_left = seconds_left % 86400;
-			        hours = parseInt(seconds_left / 3600);
-			        seconds_left = seconds_left % 3600;
-			        minutes = parseInt(seconds_left / 60);
-			        seconds = parseInt(seconds_left % 60);
-			        if(minutes < 10) minutes = '0' + minutes;
-			        if(seconds < 10) seconds = '0' + seconds;
-			        // format countdown string + set tag value
-			        if(days>0)
-			            countdown.innerHTML = "<span class='big'>" + days + "</span> giorni e ";
-			        else
-			            countdown.innerHTML = '';
-			        countdown.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
+			        } else if (/*status === "before"*/ true) {
+			            // find the amount of "seconds" between now and target
+			            var current_date = new Date().getTime();
+			            var seconds_left = (target_date - current_date) / 1000;
+			            // do some time calculations
+			            days = parseInt(seconds_left / 86400);
+			            seconds_left = seconds_left % 86400;
+			            hours = parseInt(seconds_left / 3600);
+			            seconds_left = seconds_left % 3600;
+			            minutes = parseInt(seconds_left / 60);
+			            seconds = parseInt(seconds_left % 60);
+			            if(minutes < 10) minutes = '0' + minutes;
+			            if(seconds < 10) seconds = '0' + seconds;
+			            // format countdown string + set tag value
+			            if(days>0)
+			                countdown.innerHTML = "<span class='big'>" + days + "</span> giorni e ";
+			            else
+			                countdown.innerHTML = '';
+			            countdown.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
+			         } else if (status === "ended") {
+			            countdown.innerHTML = "<span class='big'>Partita finita.</span>";
+			         }
 		        }
-		        function update_score() {
-		          var start_date = new Date("Jan 28, 2014 22:00:00").getTime();
-		          var current_date = new Date().getTime();
-		          if(current_date < start_date) {
-		            return;
-		          }
-		          $("#team-0").load("stats.php?page_name=team0");
-		          $("#team-1").load("stats.php?page_name=team1");
-		          $("#score-0").load("stats.php?page_name=score0");
-		          $("#score-1").load("stats.php?page_name=score1");
+		        function update_status_and_score() {
+		          $.get("stats.php?page_name=fake", function (data) {
+		            status = $.trim(data);
+		          });
+	              $("#team-0").load("stats.php?page_name=team0");
+	              $("#team-1").load("stats.php?page_name=team1");
+		          if (/*status === "before"*/ true) {
+		              $("#score-0").html("&ndash;");
+		              $("#score-1").html("&ndash;");
+		          } else {
+    		          $("#score-0").load("stats.php?page_name=score0");
+	    	          $("#score-1").load("stats.php?page_name=score1");
+	    	      }
 		        }
 		        // update the tag with id "countdown" every 1 second
 		        setInterval(update_timer, 1000);
 		        update_timer();
 
-		        setInterval(update_score, 1000);
-		        update_score();
+		        setInterval(update_status_and_score, 1000);
+		        update_status_and_score();
 	        </script>
             <?php
 	        }

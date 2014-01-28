@@ -99,6 +99,7 @@ start_box("Grafico", "orange", "480", "left");
     <a onclick="toggle(this)" id="tab_recent">Ultimi 30 minuti</a>
 </div>
 
+
 <div id="full_graph" class="graph">
 	<img id="score_plot_all" />
 </div>
@@ -108,6 +109,26 @@ start_box("Grafico", "orange", "480", "left");
 	<img id="score_plot_recent" />
 </div>
 
+<div id="legend">
+    <table>
+        <tr>
+            <td><span class="green-dashed"></p></td>
+            <td>Punteggio <span id="team_0"></span> anno precedente</td>
+        </tr>
+        <tr>
+            <td><span class="green-full"></p></td>
+            <td>Punteggio <span id="team_-0"></span> anno corrente</td>
+        </tr>
+        <tr>
+            <td><span class="blue-dashed"></p></td>
+            <td>Punteggio <span id="team_1"></span> anno precedente</td>
+        </tr>
+        <tr>
+            <td><span class="blue-full"></p></td>
+            <td>Punteggio <span id="team_-1"></span> anno corrente</td>
+        </tr>
+    </table>
+</div>
 
 <?php
 end_box();
@@ -127,6 +148,10 @@ init_field();
 var n=0;
 function dataRefresh() {
 	$("#time_box").load("stats/time.html");
+	$("#team_0").load("stats.php?page_name=team0");
+    $("#team_1").load("stats.php?page_name=team1");
+	$("#team_-0").load("stats.php?page_name=team0");
+    $("#team_-1").load("stats.php?page_name=team1");
 	
 	// Graphic interface
 	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") ) {

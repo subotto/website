@@ -254,7 +254,7 @@ table thead {
 	background: linear-gradient(to right, rgb(188, 216, 230) 0px, rgb(229, 241, 247) 100%) repeat scroll 0% 0% transparent;
     background: -webkit-linear-gradient(left, rgb(188, 216, 230), rgb(229, 241, 247)) repeat scroll 0% 0% transparent;
     background: -moz-linear-gradient(left, rgb(188, 216, 230), rgb(229, 241, 247)) repeat scroll 0% 0% transparent;
-    width: 220px;
+    width: 260px;
     height: 66px;
     padding-top: 5px;
     position: absolute;
@@ -274,15 +274,23 @@ table thead {
     -moz-transform: matrix(1,0,0.5,1,0,0);
 }
 
+.scoreboard tr {
+    background-color: transparent !important;
+}
+
+table.scoreboard td {
+    border: none;
+}
+
 .scoreboard .big {
     vertical-align: top;
 }
 
 .score {
-	width: 80px;
-	text-align: center;
+	width: 100px;
 	text-align: center;
 }
+
 
 .scoreboard-separator {
 	width: 5px;
@@ -791,3 +799,44 @@ iframe.twitter-timeline {
 #statistics table table tr {
     background: transparent;
 }
+
+/* Legenda grafici */
+.green-dashed {
+    width: 30px;
+    border-bottom: 2px dashed #329932;
+    display: inline-block;
+}
+
+.green-full {
+    width: 30px;
+    border-bottom: 2px solid #329932;
+    display: inline-block;
+}
+
+.blue-dashed {
+    width: 30px;
+    border-bottom: 2px dashed #2222ff;
+    display: inline-block;
+}
+
+.blue-full {
+    width: 30px;
+    border-bottom: 2px solid #2222ff;
+    display: inline-block;
+}
+
+#legend span {
+    margin-bottom: 1px;
+    height: 0;
+}
+
+#legend td {
+    vertical-align: middle;
+    height: 10px;
+}
+
+#legend td:first-child{
+    width: 35px;
+    text-align: center;
+}
+
