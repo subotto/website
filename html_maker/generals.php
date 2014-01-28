@@ -132,12 +132,14 @@ function make_page_title($title) {
 }
 
 
-function start_box($title, $color='blue', $width=0, $pull = '') {
+function start_box($title, $color='blue', $width=0, $pull = '', $id=NULL) {
     if ($pull != '') $pull = "pull-$pull";
 	$style='';
 	if ($width!=0) $style='style="width: '.$width.'px"';
+	if (is_null($id)) $id_test = '';
+	else $id_test = 'id="'.$id.'"';
 ?>
-      <div class="box box-<?php echo $color;?> <?php echo $pull;?>" <?php echo $style;?>>
+      <div class="box box-<?php echo $color;?> <?php echo $pull;?>" <?php echo $style;?> <?php echo $id_test;?> >
         <div class="box-header">
           <span class="box-header-name">
             <span><?php echo $title;?></span>
