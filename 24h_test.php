@@ -10,8 +10,6 @@ start_box("24 ore: aggiornamento in tempo reale");
 
 ?>
 
-<div id="countdown_box"></div>
-
 <div id="time_box"></div>
 
 <div class="toggle" id="toggle_interface">
@@ -74,25 +72,28 @@ start_box("24 ore: aggiornamento in tempo reale");
 	
 </div>
 
+<div id="countdown24h" >
+
+</div>
+
 <script>
 function interface_callback(active) {
+    countdown();
     if (active == "classic") stop_svg();
     else start_svg();
 }
-
-loadtoggle("interface");
 </script>
 
 <?php
 end_box();
-start_box("Statistiche", "purple", "480", "right");
+start_box("Statistiche", "purple", "480", "right", "statisticsbox");
 ?>
 
 <div id="statistics"></div>
 
 <?php
 end_box();
-start_box("Grafico", "orange", "480", "left");
+start_box("Grafico", "orange", "480", "left", "graphbox");
 ?>
 
 
@@ -150,12 +151,7 @@ init_field();
 var n=0;
 function dataRefresh() {
 	
-	if ( status == "before" ) {
-		// La partita non è cominciata
-		$("#countdown_box").load("stats.php?page_name=countdown");
-	}
-	
-	else {
+	if ( status != "before" ) {
 		$("#time_box").load("stats.php?page_name=time");
 		$("#team_0").load("stats.php?page_name=team0");
 		$("#team_1").load("stats.php?page_name=team1");
@@ -239,6 +235,28 @@ function graph_callback(active) {
 }
 
 loadtoggle("graph");
+
+function countdown() {
+    if(status == "before") {
+        add_class("graphic_interface", "hidden");
+        add_class("classic_interface", "hidden");
+        add_class("statisticsbox", "hidden");
+        add_class("graphbox", "hidden");
+        remove_class("countdown24h", "hidden");
+        $("#countdown24h").load("stats.php?page_name=countdown");
+    } else {
+        if(document.getElementById("countdown24h").classList.contains("hidden"))
+            return;
+        remove_class("classic_interface", "hidden");
+        remove_class("statisticsbox", "hidden");
+        remove_class("graphbox", "hidden");
+        add_class("countdown24h", "hidden");
+        loadtoggle("interface");
+    }
+}
+
+setInterval(countdown, 1000);
+countdown();
 
 </script>
 

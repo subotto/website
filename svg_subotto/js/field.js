@@ -200,10 +200,44 @@ function create_ball(draw) {
 		return ball;
 }
 
-function create_table(draw) {
+function create_ball_track(draw) {
+	var ball_track=new Object();
+	
+	ball_track.positions=[];
+	
+	ball_track.path=draw.path('',true);
+	ball_track.path.attr({ fill: 'none' , stroke: '#000', 'stroke-width': 3})
+	
+	ball_track.draw=function() {
+			points=ball_track.positions.map(function(d){return [subx2x(d[0]), suby2y(d[1])];});
+		
+			var s="M ";
+			for (var i=0;i<points.length;++i) {
+				  s+=points[i][0]+","+points[i][1]+" ";
+			}
+			s+=""
+			
+			ball_track.path.attr('d',s);
+	}
+	
+	ball_track.add_position=function (position) {
+		if (ball_track.positions.length > fps*2) {
+			ball_track.positions.shift();
+		}
+			
+		ball_track.positions.push(position);
+	}
+	
+	return ball_track;
+	
+}
+
+function create_table(draw, ball_layer) {
 		var table=new Object();
 
-		table.ball = create_ball(draw);
+		table.ball_track=create_ball_track(ball_layer);
+		
+		table.ball = create_ball(ball_layer);
 
 		rods_red=[];
 		rods_red[0]=create_rod(draw,1,0,0);
@@ -239,12 +273,13 @@ function create_table(draw) {
 
 		table.rods_red=rods_red;
 		table.rods_blue=rods_blue;
-
+		
 
 		table.draw=function() {
 				table.rods_red.draw();
 				table.rods_blue.draw();
 				table.ball.draw();
+				table.ball_track.draw();
 		}
 
 		table.rotate=function(c,i,angle) {
@@ -259,6 +294,9 @@ function create_table(draw) {
 
 function display_frame(frame) {
 		table.ball.move(frame.ball_y, frame.ball_x); // Sto disegnando in verticale quindi sono invertiti
+
+		table.ball_track.add_position([frame.ball_y, frame.ball_x]);
+		
 
 		table.rods_red[0].offset(frame.rod_red_0_shift);
 		table.rods_red[1].offset(frame.rod_red_1_shift);
@@ -411,7 +449,9 @@ function stop_svg() {
 
 function init_field() {
 		draw = SVG('canvas').size(380.17, 640.18);
-		table = create_table(draw);
+		ball_layer = SVG('ball_layer').size(380.17, 640.18);
+		
+		table = create_table(draw, ball_layer);
 		table.rotate(0,0,-Math.PI/2);
 		table.rotate(0,1,-Math.PI/2);
 		table.rotate(0,2,-Math.PI/2);

@@ -10,9 +10,9 @@ function menu($countdown = TRUE, $group = "home") {
         "Edizione 2013" => "statistics.php?match_id=4"
     );
     $links["current"] = array(
-        "Turni programmati" => "schedule.php",
         "Punteggio in tempo reale" => "24h.php",
-        "Streaming in tempo reale" => "streaming.php"
+        "Streaming in tempo reale" => "streaming.php",
+        "Turni programmati" => "schedule.php"
     );
     $links["teams"] = array(
     );
@@ -55,11 +55,11 @@ function menu($countdown = TRUE, $group = "home") {
             </div>
             <nav class="links links-upper white">
               <li><a href="index.php">Home</a></li>
-              <li><a href="schedule.php">Edizione corrente</a></li>
+              <li><a href="24h.php">Edizione corrente</a></li>
               <li><a href="statistics.php">Edizioni passate</a></li>
               <li><a href="trailers.php">Trailer</a></li>
               <li><a href="rules.php">La manifestazione</a></li>
-              <!--<li><a href="streaming.php">Live</a></li>-->
+              <!--<li><a href="24h.php">Live</a></li>-->
               <li></li>
             </nav>
             <nav class="links links-lower">
@@ -83,13 +83,16 @@ function menu($countdown = TRUE, $group = "home") {
 		        // variables for time units
 		        var days, hours, minutes, seconds;
 		        // get tag element
-		        var countdown = document.getElementById("countdown");
+		        var countdowndiv = document.getElementById("countdown");
 		        function update_timer() {
-                    if(status === "running" || status === "advantages") {
-			            countdown.innerHTML = "Partita iniziata da <span id='dtime' class='big'></span>";
-			            $("#dtime").load("stats.php?page_name=time");
+                    if(/*status === "running" || status === "advantages"*/ false) {
+			            $.get("stats.php?page_name=time", function(data) {
+			                countdowndiv.innerHTML = "Partita iniziata da <span class='big'>" + data + "</span>.";
+			            });
 			            return;
 			        } else if (/*status === "before"*/ true) {
+                        // Versione senza listener
+
 			            // find the amount of "seconds" between now and target
 			            var current_date = new Date().getTime();
 			            var seconds_left = (target_date - current_date) / 1000;
@@ -104,16 +107,24 @@ function menu($countdown = TRUE, $group = "home") {
 			            if(seconds < 10) seconds = '0' + seconds;
 			            // format countdown string + set tag value
 			            if(days>0)
-			                countdown.innerHTML = "<span class='big'>" + days + "</span> giorni e ";
+			                countdowndiv.innerHTML = "<span class='big'>" + days + "</span> giorni e ";
 			            else
-			                countdown.innerHTML = '';
-			            countdown.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
+			                countdowndiv.innerHTML = '';
+			            countdowndiv.innerHTML += "<span class='big'>" + hours + ":" + minutes + ":" + seconds + "</span> all'inizio!";
+
+			            // Versione con listener
+/*
+			            $.get("stats.php?page_name=countdown", function(data) {
+			                countdown.innerHTML = "<span class='big'>" + data + "</span> all'inizio!";
+			            });
+*/
 			         } else if (status === "ended") {
-			            countdown.innerHTML = "<span class='big'>Partita finita.</span>";
+			            countdowndiv.innerHTML = "<span class='big'>Partita finita.</span>";
 			         }
 		        }
 		        function update_status_and_score() {
 		          $.get("stats.php?page_name=fake", function (data) {
+		            if($.trim(data) == '') return;
 		            status = $.trim(data);
 		          });
 	              $("#team-0").load("stats.php?page_name=team0");

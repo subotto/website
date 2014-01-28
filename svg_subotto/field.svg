@@ -15,6 +15,8 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  
+
   <g transform="translate(0 380.17) rotate(-90)">
     <g id="layer1" transform="translate(-130.00189,-542.18658)">
       <rect id="rect3050" stroke-dashoffset="0" transform="matrix(0,1,-1,0,0,0)" height="379.17" width="639.18" stroke="#000" stroke-dasharray="none" stroke-miterlimit="4" y="-509.68" x="542.69" stroke-width="1" fill="#008000"/>
@@ -50,6 +52,14 @@
       <path id="path3826" stroke-linejoin="miter" d="m378.37,1181.7,104.33-104.11,26.829,16.112,0,87.998z" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="0.5" fill="#FFF"/>
       <path id="path3828" stroke-linejoin="miter" d="m261.81,1181.7-104.34-104.11-26.829,16.112,0,87.998z" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="0.5" fill="#FFF"/>
       <path id="path3960" d="m363.57,554.15c0,3.7476-2.8782,6.7857-6.4286,6.7857s-6.4286-3.0381-6.4286-6.7857,2.8782-6.7857,6.4286-6.7857,6.4286,3.0381,6.4286,6.7857z" transform="matrix(0,1.1666667,-1.1052632,0,932.56804,445.60867)" fill="#FFF"/>
+    
+    </g>
+    
+    <svg id="ball_layer">
+	</svg>
+    
+    <g id="layer2" transform="translate(-130.00189,-542.18658)">
+  
       <rect id="rect3836" stroke-dasharray="none" transform="matrix(0,1,-1,0,0,0)" height="379.14" width="9.8592" stroke="#000" stroke-miterlimit="4" y="-509.66" x="644.13" stroke-width="0.5" fill="url(#linearGradient4088)"/>
       <use id="use4895" xlink:href="#rect3836" transform="translate(0,85.285711)" height="1052.3622" width="744.09448" y="0" x="0"/>
       <use id="use4897" xlink:href="#rect3836" transform="translate(0,170.57147)" height="1052.3622" width="744.09448" y="0" x="0"/>
@@ -59,6 +69,7 @@
       <use id="use3241" xlink:href="#rect3836" transform="translate(0,-85.285777)" height="640.17749" width="380.17374" y="0" x="0"/>
       <use id="use3243" xlink:href="#rect3836" transform="translate(0,511.71437)" height="640.17749" width="380.17374" y="0" x="0"/>
     </g>
+    
     <svg id="canvas">
     </svg>
   </g>

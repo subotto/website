@@ -185,8 +185,6 @@ table thead {
 .links-upper {
     background-color: white;
     margin-left: 20px;
-
-    
     transform: matrix(1,0,-0.5,1,-2.5,0);
     -webkit-transform: matrix(1,0,-0.5,1,-2.5,0);
     -moz-transform: matrix(1,0,-0.5,1,-2.5,0);
@@ -328,6 +326,7 @@ table.scoreboard td {
     -webkit-box-shadow: -10px 10px 5px rgba(128, 128, 128, 0.4);
     font-size: 15px;
     font-weight: bold;
+    height: 24px;
 }
 
 .subheader div {
@@ -838,5 +837,11 @@ iframe.twitter-timeline {
 #legend td:first-child{
     width: 35px;
     text-align: center;
+}
+
+#countdown24h {
+    width: 100%;
+    text-align: center;
+    font-size: 200px;
 }
 
