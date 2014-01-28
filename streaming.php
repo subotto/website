@@ -30,7 +30,7 @@ if ( $test == FALSE || isset( $_GET["test"] ) ) echo '<div id="score"></div>';
   preload="auto" poster="images/subotto2.jpg"
   data-setup="{}">
   <?php
-  echo '<source src="http://soyuz.sns.it:8001/low.ts" type="video/MP2T">';
+  echo '<source src="http://soyuz.sns.it:8001/low" type="video/x-flv">';
   ?>
 </video>
 </center>
@@ -40,7 +40,7 @@ if ( $test == FALSE || isset( $_GET["test"] ) ) echo '<div id="score"></div>';
   preload="auto" poster="images/subotto2.jpg"
   data-setup="{}">
   <?php
-  echo '<source src="http://soyuz.sns.it:8000/hi.ts" type="video/MP2T">';
+  echo '<source src="http://soyuz.sns.it:8000/hi" type="video/x-flv">';
   ?>
 </video>
 </center>
@@ -51,7 +51,7 @@ if ( $test == FALSE || isset( $_GET["test"] ) ) echo '<div id="score"></div>';
 
 <?php
 
-echo '<p>Link diretto allo streaming (<a href="http://soyuz.uz.sns.it:8001/low.ts">bassa qualit&agrave;</a>, <a href="http://soyuz.uz.sns.it:8000/hi.ts">alta qualit&agrave;</a>).</p>';
+echo '<p>Link diretto allo streaming (<a href="http://soyuz.uz.sns.it:8001/low">bassa qualit&agrave;</a>, <a href="http://soyuz.uz.sns.it:8000/hi">alta qualit&agrave;</a>).</p>';
 
 end_box();
 end_html();
