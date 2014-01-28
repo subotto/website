@@ -7,7 +7,7 @@ make_header(true, "current");
 
 start_box("Turni della 24 ore 2014");
 
-paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazioni."));
+//paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazioni."));
 
 function boris() {
 	$r = rand(0,1);

@@ -10,7 +10,9 @@ start_box("24 ore: aggiornamento in tempo reale");
 
 ?>
 
-<div id="time_box" ></div>
+<div id="countdown_box"></div>
+
+<div id="time_box"></div>
 
 <div class="toggle" id="toggle_interface">
     <a onclick="toggle(this)" id="tab_classic" class="active">Visualizzazione classica</a>
@@ -147,66 +149,75 @@ init_field();
 
 var n=0;
 function dataRefresh() {
-	$("#time_box").load("stats.php?page_name=time");
-	$("#team_0").load("stats.php?page_name=team0");
-    $("#team_1").load("stats.php?page_name=team1");
-	$("#team_-0").load("stats.php?page_name=team0");
-    $("#team_-1").load("stats.php?page_name=team1");
 	
-	// Graphic interface
-	if ( ! document.getElementById("graphic_interface").classList.contains("hidden") ) {
-		$("#red_team").load("stats.php?page_name=red_team");
-		$("#blue_team").load("stats.php?page_name=blue_team");
-	
-		$("#red_score").load("stats.php?page_name=red_score");
-		$("#blue_score").load("stats.php?page_name=blue_score");
-	
-		$("#red_attacker").load("stats.php?page_name=red_attacker");
-		$("#red_defender").load("stats.php?page_name=red_defender");
-		$("#blue_attacker").load("stats.php?page_name=blue_attacker");
-		$("#blue_defender").load("stats.php?page_name=blue_defender");
-	
-		$("#red_attacker_stats").load("stats.php?page_name=red_attacker_stats");
-		$("#red_defender_stats").load("stats.php?page_name=red_defender_stats");
-		$("#blue_attacker_stats").load("stats.php?page_name=blue_attacker_stats");
-		$("#blue_defender_stats").load("stats.php?page_name=blue_defender_stats");
+	if ( status == "before" ) {
+		// La partita non è cominciata
+		$("#countdown_box").load("stats.php?page_name=countdown");
 	}
 	
-	// Classic interface
-	if ( ! document.getElementById("classic_interface").classList.contains("hidden") ) {
-		$("#team0").load("stats.php?page_name=team0");
-		$("#team1").load("stats.php?page_name=team1");
+	else {
+		$("#time_box").load("stats.php?page_name=time");
+		$("#team_0").load("stats.php?page_name=team0");
+		$("#team_1").load("stats.php?page_name=team1");
+		$("#team_-0").load("stats.php?page_name=team0");
+		$("#team_-1").load("stats.php?page_name=team1");
 	
-		$("#player00").load("stats.php?page_name=player00");
-		$("#player01").load("stats.php?page_name=player01");
-		$("#player10").load("stats.php?page_name=player10");
-		$("#player11").load("stats.php?page_name=player11");
+		// Graphic interface
+		if ( ! document.getElementById("graphic_interface").classList.contains("hidden") ) {
+			$("#red_team").load("stats.php?page_name=red_team");
+			$("#blue_team").load("stats.php?page_name=blue_team");
 	
-		$("#player00_stats").load("stats.php?page_name=player00_stats");
-		$("#player01_stats").load("stats.php?page_name=player01_stats");
-		$("#player10_stats").load("stats.php?page_name=player10_stats");
-		$("#player11_stats").load("stats.php?page_name=player11_stats");
+			$("#red_score").load("stats.php?page_name=red_score");
+			$("#blue_score").load("stats.php?page_name=blue_score");
 	
-		$("#score0").load("stats.php?page_name=score0");
-		$("#score1").load("stats.php?page_name=score1");
-	}
+			$("#red_attacker").load("stats.php?page_name=red_attacker");
+			$("#red_defender").load("stats.php?page_name=red_defender");
+			$("#blue_attacker").load("stats.php?page_name=blue_attacker");
+			$("#blue_defender").load("stats.php?page_name=blue_defender");
 	
-	// Statistics
-	if ( n%3 == 0 ) {
-		$("#statistics").load("stats.php?page_name=statistics");
-	}
-	
-	// Graph
-	if ( n%10 == 0 ) {
-		d = new Date();
-		if ( ! document.getElementById("full_graph").classList.contains("hidden") ) {
-			$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
+			$("#red_attacker_stats").load("stats.php?page_name=red_attacker_stats");
+			$("#red_defender_stats").load("stats.php?page_name=red_defender_stats");
+			$("#blue_attacker_stats").load("stats.php?page_name=blue_attacker_stats");
+			$("#blue_defender_stats").load("stats.php?page_name=blue_defender_stats");
 		}
-		if ( ! document.getElementById("recent_graph").classList.contains("hidden") ) {
-			$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
+	
+		// Classic interface
+		if ( ! document.getElementById("classic_interface").classList.contains("hidden") ) {
+			$("#team0").load("stats.php?page_name=team0");
+			$("#team1").load("stats.php?page_name=team1");
+	
+			$("#player00").load("stats.php?page_name=player00");
+			$("#player01").load("stats.php?page_name=player01");
+			$("#player10").load("stats.php?page_name=player10");
+			$("#player11").load("stats.php?page_name=player11");
+	
+			$("#player00_stats").load("stats.php?page_name=player00_stats");
+			$("#player01_stats").load("stats.php?page_name=player01_stats");
+			$("#player10_stats").load("stats.php?page_name=player10_stats");
+			$("#player11_stats").load("stats.php?page_name=player11_stats");
+	
+			$("#score0").load("stats.php?page_name=score0");
+			$("#score1").load("stats.php?page_name=score1");
 		}
+	
+		// Statistics
+		if ( n%3 == 0 ) {
+			$("#statistics").load("stats.php?page_name=statistics");
+		}
+	
+		// Graph
+		if ( n%10 == 0 ) {
+			d = new Date();
+			if ( ! document.getElementById("full_graph").classList.contains("hidden") ) {
+				$("#score_plot_all").attr("src", "stats/score_plot_all.png?"+d.getTime());
+			}
+			if ( ! document.getElementById("recent_graph").classList.contains("hidden") ) {
+				$("#score_plot_recent").attr("src", "stats/score_plot_last.png?"+d.getTime());
+			}
+		}
+		
+		n = n+1;
 	}
-	n = n+1;
 }
 
 var refresh;
