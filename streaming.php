@@ -47,11 +47,9 @@ if ( $test == FALSE || isset( $_GET["test"] ) ) echo '<div id="score"></div>';
 
 <script>loadtoggle("quality")</script>
 
-<p>L'unico browser con cui questo streaming &egrave; stato testato &egrave; Firefox (<a href="http://www.mozilla.org/products/download.html?product=firefox-10.0.1&os=linux&lang=en-US">download</a>).</p>
+<p>Link diretto allo streaming (<a href="http://soyuz.uz.sns.it:8001/low">bassa qualit&agrave;</a>, <a href="http://soyuz.uz.sns.it:8000/hi">alta qualit&agrave;</a>).</p>
 
 <?php
-
-echo '<p>Link diretto allo streaming (<a href="http://soyuz.uz.sns.it:8001/low">bassa qualit&agrave;</a>, <a href="http://soyuz.uz.sns.it:8000/hi">alta qualit&agrave;</a>).</p>';
 
 end_box();
 end_html();
