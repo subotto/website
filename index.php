@@ -25,8 +25,8 @@ start_box("Edizioni della 24 ore");
 		<td>Capitano: Alessandro Iraci<br />
 			Vicecapitano: Federico Scavia<br />
 			Partecipanti ufficiali: -</td>
-		<td class="center">-</td>
-		<td class="center">-</td>
+		<td class="center"><b>1520</b></td>
+		<td class="center">1387</td>
 		<td>Capitano: Giulio Mandorli<br />
 			Vicecapitano: Marco Cilibrasi<br />
 			Partecipanti ufficiali: -</td>
