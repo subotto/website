@@ -221,6 +221,12 @@ function create_ball_track(draw) {
 	}
 	
 	ball_track.add_position=function (position) {
+
+		if (Math.abs(position[0])<0.0001 && Math.abs(position[1])<0.0001) {
+			return;
+		}
+
+
 		if (ball_track.positions.length > fps*2) {
 			ball_track.positions.shift();
 		}
@@ -379,11 +385,11 @@ function update_everything() {
     function max(a, b) { if (a > b) return a; else return b; }
 
     // If the buffer is too long, trim it a bit
-    var max_length = 10.0 * fps;
+    var max_length = 20.0 * fps;
     if (frames.length > max_length) {
         time_delta -= (frames.length - max_length) / fps;
     }
-    var good_length = 4.0 * fps;
+    var good_length = 10.0 * fps;
     if (frames.length > good_length) {
         time_delta -= max(0.1, 0.005 * (frames.length - good_length)) / fps;
     }

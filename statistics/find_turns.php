@@ -21,7 +21,7 @@ class Turn {
 
 $conn = connetti();
 
-$i = 4; // Indice della partita
+$i = 7; // Indice della partita
 
 $goals = array(1 => array(), 2 => array());
 $res = query("SELECT * FROM events WHERE match_id = ".$i." AND ( type = 'goal' OR type = 'goal_undo' ) ORDER BY timestamp");

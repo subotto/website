@@ -124,16 +124,11 @@ foreach ( $res as $row ) {
 $input = array();
 
 // L'indice è il match_id (sotto è chiamato anche "edition")
-// $input[1] = file( "turns2010.txt" );
-// $input[2] = file( "turns2011.txt" );
-// $input[3] = file( "turns2012.txt" );
-// $input[4] = file( "turns2013.txt" );
-
-$input[1] = file( "test2010.txt" );
-$input[2] = file( "test2011.txt" );
-$input[3] = file( "test2012.txt" );
-$input[4] = file( "test2013.txt" );
-
+//$input[1] = file( "turns2010.txt" );
+//$input[2] = file( "turns2011.txt" );
+//$input[3] = file( "turns2012.txt" );
+//$input[4] = file( "turns2013.txt" );
+$input[7] = file( "turns2014.txt" );
 
 // Elaboro i dati
 
@@ -143,6 +138,10 @@ foreach ( $input as $edition => $turns ) {
 	
 	foreach ( $turns as $turn ) {
 		$string = trim($turn);
+		if ( $string[0] == '#' ) {
+			echo "Ho incontrato un commento!<br />";
+			continue;
+		}
 		$pieces = explode("," , $string);
 		
 		$begin = $pieces[0];
@@ -304,7 +303,7 @@ function general_statistics() {
 }
 
 //general_statistics();
-//edition_statistics(4);
+edition_statistics(7);
 
 
 

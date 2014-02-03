@@ -237,6 +237,7 @@ function graph_callback(active) {
 loadtoggle("graph");
 
 function countdown() {
+    status = "running"
     if(status == "before") {
         add_class("graphic_interface", "hidden");
         add_class("classic_interface", "hidden");

@@ -24,12 +24,12 @@ start_box("Edizioni della 24 ore");
 		<td class="center">28-29 gennaio 2014</td>
 		<td>Capitano: Alessandro Iraci<br />
 			Vicecapitano: Federico Scavia<br />
-			Partecipanti ufficiali: -</td>
-		<td class="center"><b></b></td>
-		<td class="center"></td>
+			Partecipanti ufficiali: 69</td>
+		<td class="center"><b>1511</b></td>
+		<td class="center">1377</td>
 		<td>Capitano: Giulio Mandorli<br />
 			Vicecapitano: Marco Cilibrasi<br />
-			Partecipanti ufficiali: -</td>
+			Partecipanti ufficiali: 45</td>
 		<td class="center">Collegio Carducci</td>
 	</tr>
 	
