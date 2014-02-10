@@ -22,10 +22,14 @@ make_header(true, "teams");
 </ul>
 */
 
+
+start_box("Sigla della 24 ore", "purple", 600);
 ?>
-
-
+<iframe width="560" height="315" src="//www.youtube.com/embed/xGoaHT6PzxY?rel=0" frameborder="0" allowfullscreen></iframe>
+<p>Autore: Francesco Guatieri</p>
 <?php
+end_box();
+
 start_box("Trailer 2014", "purple", 600);
 ?>
 <iframe width="560" height="315" src="//www.youtube.com/embed/zWSAXOlzBcE?rel=0" frameborder="0" allowfullscreen></iframe>
