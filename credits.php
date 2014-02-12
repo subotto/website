@@ -21,7 +21,7 @@ Arredamento: Giovanni Mascellani<br />
 Tear down: Giovanni Mascellani, Giovanni Paolini, Fabrizio Bianchi, Sasha Iraci, ??<br />
 
 <h3>Cibo</h3>
-Relazioni con i fornitori: Sasha Iraci, Federico Scavia (??)<br />
+Relazioni con i fornitori: Sasha Iraci, Federico Scavia, Stanislao Zompì<br />
 Magazzino: Sasha Iraci<br />
 Fornitura bollitore: Ugo Bindini<br />
 Fornitura caffè e macchina del caffè: Federico Tonielli
@@ -45,10 +45,10 @@ Realizzazione e posa cavi: Giovanni Mascellani, ??<br />
 Amministrazione sistemi: Giovanni Mascellani, ??<br />
 
 <h3>Subotto</h3>
-Pulizia: Sasha Iraci, Luca Ghidelli, <br />
+Pulizia: Sasha Iraci, Luca Ghidelli, Federico Scavia, Claudio Afeltra<br />
 Riverniciatura sponde: Alessandro Malusà, Sasha Iraci, Federico Scavia<br />
 Sostituzione pezzi e rimontaggio: Sasha Iraci, ??<br />
-Relazioni con i fornitori: Sasha Iraci, ??<br />
+Relazioni con i fornitori: Sasha Iraci, Giuliano Chiriacò<br />
 
 <h3>Subotto++</h3>
 Progetto e realizzazione fotocellule: Francesco Guatieri<br />
@@ -67,8 +67,8 @@ Relazioni con i fornitori: Enrico Polesel, Franesco Guatieri, Alessandro Achille
 
 
 <h3>Manovalanza</h3>
-Trasporto biliardino: ??<br />
-Trasporto tavoli: Giovanni Paolini, ??<br />
+Trasporto biliardino: Alessandro Malusà, Vasco Cavina<br />
+Trasporto tavoli: Vasco Cavina, Giovanni Paolini, Alessandro Iraci, Marco Marengon, Fabrizio Bianchi<br />
 Trasporto attrezzatura informatica: Giovanni Mascellani, ??<br />
 
 
