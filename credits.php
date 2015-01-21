@@ -18,7 +18,7 @@ Vicecapitani: Federico Scavia e Marco Cilibrasi<br />
 Matricole reclute: Andrea Parma e Davide Napoli<br />
 Comitato turni: Alessandro Iraci, Federico Scavia, Giovanni Paolini, Giulio Mandorli, Vasco Cavina, Giuliano Chiriacò<br />
 Arredamento: Giovanni Mascellani<br />
-Tear down: Giovanni Mascellani, Giovanni Paolini, Fabrizio Bianchi, Sasha Iraci, ??<br />
+Tear down: Giovanni Mascellani, Giovanni Paolini, Fabrizio Bianchi, Sasha Iraci<br />
 
 <h3>Cibo</h3>
 Relazioni con i fornitori: Sasha Iraci, Federico Scavia, Stanislao Zompì<br />
@@ -35,19 +35,19 @@ VFX: Giovanni Mascellani, Alessandro Achille, Giovanni Paolini, Enrico Polesel<b
 <h3>Streaming</h3>
 Progettazione e regia: Giovanni Mascellani<br />
 Tecnico audio: Giovanni Mascellani<br />
-Posizionamento telecamere: Giovanni Mascellani, Giovanni Paolini, ??<br />
+Posizionamento telecamere: Giovanni Mascellani, Giovanni Paolini<br />
 Relazioni con i fornitori: Giovanni Mascellani<br />
 Reperimento materiale tecnico: Giovanni Mascellani<br />
 Responsabile dell'archiviazione: Giovanni Mascellani<br />
 
 <h3>Sistemistica</h3>
-Realizzazione e posa cavi: Giovanni Mascellani, ??<br />
-Amministrazione sistemi: Giovanni Mascellani, ??<br />
+Realizzazione e posa cavi: Giovanni Mascellani<br />
+Amministrazione sistemi: Giovanni Mascellani<br />
 
 <h3>Subotto</h3>
 Pulizia: Sasha Iraci, Luca Ghidelli, Federico Scavia, Claudio Afeltra<br />
 Riverniciatura sponde: Alessandro Malusà, Sasha Iraci, Federico Scavia<br />
-Sostituzione pezzi e rimontaggio: Sasha Iraci, ??<br />
+Sostituzione pezzi e rimontaggio: Sasha Iraci<br />
 Relazioni con i fornitori: Sasha Iraci, Giuliano Chiriacò<br />
 
 <h3>Subotto++</h3>
@@ -55,7 +55,7 @@ Progetto e realizzazione fotocellule: Francesco Guatieri<br />
 Manuntenzione fotocellule: Carmelo Mordini, Enrico Polesel, Francesco Guatieri<br />
 Progetto e realizzazione schermi 7-segment: Alessandro Achille<br />
 Allestimento subotto: Francesco Guatieri, Carmelo Mordini, Enrico Polesel<br />
-Programmazione MCU: Enrico Polesel, Alessandro Achille, Giovanni Mascellani, Carmelo Mordini (??)<br />
+Programmazione MCU: Enrico Polesel, Alessandro Achille, Giovanni Mascellani, Carmelo Mordini<br />
 Programmazione elaboratori: Giovanni Mascellani, Enrico Polesel, Giovanni Paolini<br />
 Progetto e realizzazione del software di tracciamento della pallina: Massimo Cairo, Giovanni Paolini, Luca Versari, Giovanni Mascellani, Alessandro Achille<br/>
 Progettazione della piattaforma per le riprese aeree: Francesco Guatieri, Giovanni Mascellani<br />
@@ -69,7 +69,7 @@ Relazioni con i fornitori: Enrico Polesel, Franesco Guatieri, Alessandro Achille
 <h3>Manovalanza</h3>
 Trasporto biliardino: Alessandro Malusà, Vasco Cavina<br />
 Trasporto tavoli: Vasco Cavina, Giovanni Paolini, Alessandro Iraci, Marco Marengon, Fabrizio Bianchi<br />
-Trasporto attrezzatura informatica: Giovanni Mascellani, ??<br />
+Trasporto attrezzatura informatica: Giovanni Mascellani<br />
 
 
 <h3>Trailer clandestino</h3>
