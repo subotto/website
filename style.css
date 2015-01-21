@@ -465,7 +465,7 @@ table.scoreboard td {
 
 /* Twitter */
 iframe.twitter-timeline {
-    width: 450px;
+    width: 440px !important;
 }
 
 /* Streaming */
