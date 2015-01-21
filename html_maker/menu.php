@@ -58,7 +58,7 @@ function menu($countdown = TRUE, $group = "home") {
               <li><a href="index.php">Home</a></li>
               <li><a href="24h.php">Edizione corrente</a></li>
               <li><a href="statistics.php">Edizioni passate</a></li>
-              <li><a href="trailers.php">Trailer</a></li>
+              <li><a href="trailers.php">Trailer e sigla</a></li>
               <li><a href="rules.php">La manifestazione</a></li>
               <!--<li><a href="24h.php">Live</a></li>-->
               <li></li>

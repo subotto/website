@@ -32,6 +32,10 @@ Sceneggiatura: Giovanni Paolini, Ugo Bindini<br />
 Interpreti: Giuliano Chiriacò, Francesco Guatieri, Davide Lofano, Giulio Mandorli, Giovanni Paolini, Luca Rigovacca, Federico Scavia, Federica Surace<br />
 VFX: Giovanni Mascellani, Alessandro Achille, Giovanni Paolini, Enrico Polesel<br />
 
+<h3>Sigla</h3>
+Realizzazione: Francesco Guatieri
+Editing video: Francesco Guatieri, Giovanni Paolini, Enrico Polesel
+
 <h3>Streaming</h3>
 Progettazione e regia: Giovanni Mascellani<br />
 Tecnico audio: Giovanni Mascellani<br />
@@ -73,7 +77,8 @@ Trasporto attrezzatura informatica: Giovanni Mascellani<br />
 
 
 <h3>Trailer clandestino</h3>
-??
+Doppiaggio: Aleksandra Baranova, Fabrizio Bianchi, Alessandra Caraceni, Davide Lombardo, Marco Marengon, Giovanni Mascellani, Gennady Uraltsev<br />
+
 
 <?php
 

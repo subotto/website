@@ -171,6 +171,77 @@ dimostra di apprezzare la sorpresa.
 
 <?php
 end_box();
+
+start_box("Edizione 2014");
+?>
+<p>
+La preparazione per la 24 ore 2014 inizia già a luglio, con i primi lavori
+di grafica 3D per il nuovo attesissimo trailer.
+Le ormai consolidate fotocellule di Francesco Guatieri vengono prese in mano
+da Carmelo Mordini ed Enrico Polesel, i quali si occupano del lavoro di
+ripristino e messa in funzione.
+Le novità principali si spostano invece nel campo della programmazione web
+e, soprattutto, della computer vision.
+</p>
+<p>
+Inizia quasi per caso il progetto del riconoscimento della pallina del biliardino,
+ad opera di Alessandro Achille, Massimo Cairo, Giovanni Mascellani e Giovanni
+Paolini. Viene acquistata una webcam con frequenza di 120 fps da porre sopra il
+campo di gioco, con l'obiettivo di catturare il video della partita ed
+elaborarlo in tempo reale. Il lavoro produce dei buoni risultati, consentendo
+di ricostruire parzialmente la traiettoria della pallina e il movimento
+degli omini durante il gioco. Questo progetto prende il nome di <em>Subtracker</em>.
+</p>
+<p>
+La grafica del sito web viene completamente rinnovata da Luca Versari e Alessandro
+Achille. Viene creata una nuova pagina per seguire la partita in tempo reale,
+contenente la ricostruzione delle posizioni di pallina e omini secondo quanto
+elaborato dal programma di tracciamento.
+</p>
+<p>
+Si forma ufficialmente il <em>Subotto Tecnical Team</em>, del quale fanno parte
+Alessandro Achille, Massimo Cairo, Giovanni Mascellani, Carmelo Mordini,
+Giovanni Paolini, Enrico Polesel e Luca Versari.
+Vengono stampate otto copie della nuova maglietta del <em>Subotto Tecnical Team</em>,
+una per ciascuno dei sette membri e una per Alessandro Iraci (principale
+organizzatore dell'evento, insieme a Giovanni Paolini).
+</p>
+<p>
+Alcune settimane prima della partita esce il trailer, sul quale hanno lavorato
+numerose persone: Giovanni Paolini, Ugo Bindini, Giovanni Mascellani,
+Alessandro Achille ed Enrico Polesel (oltre a tutti i doppiatori).
+Di particolare effetto è il modello 3D del Collegio Carducci, presente nella
+parte iniziale del trailer.
+Insieme al trailer viene proiettata la nuova sigla della 24 ore, realizzata
+da Francesco Guatieri ispirandosi alla sigla della Champions League.
+Anche questa riscuote un grande successo.
+</p>
+<p>
+Nel prepartita non mancano alcune piccole difficoltà tecniche:
+solo all'ultimo momento viene trovato un led di ricambio per una delle quattro
+fotocellule che aveva smesso di funzionare.
+Nei minuti che precedono l'inizio del match viene proiettata nuovamente la sigla della
+24 ore e fa il suo ingresso Darth Vader (Marco Barberis), il quale giocherà poi per
+alcuni minuti.
+La partita si svolge con grande partecipazione e intensità. Nelle prime ore
+i Fisici mostrano ottime qualità di gioco e riescono a guadagnare alcune decine
+di gol di vantaggio sugli avversari. Durante la notte avviene la rimonta dei
+Matematici, i quali si portano in testa e faticosamente cominciano a guadagnare
+terreno. È durante il giorno che la squadra dei Matematici riesce a consolidare
+la propria posizione con una costante crescita del vantaggio sulla squadra dei
+Fisici, vantaggio che rimane ampio fino alla conclusione del match.
+Nelle ultime ore di gioco vi è una notevole partecipazione da parte dei membri
+di entrambe le squadre, dimostrando ancora una volta il grande successo dell'evento.
+Nell'arco di tutta la partita, l'infrastruttura tecnica (fotocellule, riconoscimento
+della pallina, streaming e aggiornamento in tempo reale sul web) funziona quasi
+costantemente con degli ottimi risultati.
+Anche quest'anno dopo la partita viene proiettato il nuovo trailer clandestino,
+realizzato come sempre nel più assoluto riserbo.
+</p>
+
+
+<?php
+end_box();
 end_html();
 
 ?>
