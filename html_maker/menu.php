@@ -34,8 +34,8 @@ function menu($countdown = TRUE, $group = "home") {
                 <a href="index.php"><img class="logo" src="images/logo.svg" /></a>
                 <span class="info">
                   Ventiquattr'ore di Biliardino <br/>
-                  Quinta edizione <br/>
-                  <i>28-29 gennaio 2014</i>
+                  Sesta edizione <br/>
+                  <i>19-20 febbraio 2015</i>
                 </span>
               </span>
               <span class="lightblue lightblue-right"></span>
