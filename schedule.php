@@ -9,6 +9,8 @@ start_box("Turni della 24 ore 2015");
 
 paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazioni."));
 
+?>
+
 <table id="tabella">
 <thead>
 <tr><th>Orario</th><th>Matematici</th><th>Fisici</th></tr>
@@ -41,6 +43,8 @@ paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazio
 
 </tbody>
 </table>
+
+<?php
 
 start_box("Turni della 24 ore 2014");
 
