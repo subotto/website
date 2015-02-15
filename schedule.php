@@ -46,6 +46,8 @@ paragraph(bold("I turni non sono ancora definitivi, e potrebbero subire variazio
 
 <?php
 
+end_box();
+
 start_box("Turni della 24 ore 2014");
 
 function boris() {
