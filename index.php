@@ -27,7 +27,7 @@ start_box("Edizioni della 24 ore");
 			Partecipanti ufficiali: N/D</td>
 		<td class="center">--</td>
 		<td class="center">--</td>
-		<td>Capitano: N/D<br />
+		<td>Capitano: Marco Cilibrasi<br />
 			Vicecapitano: N/D<br />
 			Partecipanti ufficiali: N/D</td>
 		<td class="center">Collegio Carducci</td>
